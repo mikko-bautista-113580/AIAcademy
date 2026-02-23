@@ -1,0 +1,428 @@
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden bg-dark">
+  <!-- Animated Background -->
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark"></div>
+    <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
+    <!-- Grid Pattern -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-primary text-sm font-medium">Powered by AI Innovation</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+          Master the Future of
+          <span class="bg-gradient-to-r from-primary via-primary-light to-secondary bg-clip-text text-transparent">
+            Artificial Intelligence
+          </span>
+        </h1>
+
+        <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+          At NPI AI Academy, learn by doing—through real-world projects, pair programming, and expert guidance—while growing with a community that's shaping tomorrow's technology.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a routerLink="/pair-programming"
+             class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300">
+            Pair Programming
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          <a (click)="scrollToDemo()"
+             class="cursor-pointer inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Watch Demo
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-white/10">
+          <div class="text-center lg:text-left">
+            <div class="text-3xl font-bold text-white">4</div>
+            <div class="text-sm text-slate-500 mt-1">Demos</div>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="text-3xl font-bold text-white">3</div>
+            <div class="text-sm text-slate-500 mt-1">Pair Programming</div>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="text-3xl font-bold text-white">6</div>
+            <div class="text-sm text-slate-500 mt-1">Presentations</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content - AI Visual -->
+      <div class="hidden lg:flex justify-center items-center">
+        <div class="relative">
+          <!-- Main Circle -->
+          <div class="w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border border-white/10 backdrop-blur-sm">
+            <div class="w-60 h-60 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center border border-white/10">
+              <div class="w-40 h-40 rounded-full overflow-hidden shadow-2xl shadow-primary/40">
+                <img src="npiaiLogo.png" alt="NPI AI Academy" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Cards -->
+          <div class="absolute -top-4 -right-4 px-4 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-float">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
+                <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-white text-xs font-semibold">Demos</div>
+                <div class="text-slate-400 text-[10px]">4 Videos</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-4 -left-4 px-4 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-float" style="animation-delay: 1.5s;">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-white text-xs font-semibold">Pair Programming</div>
+                <div class="text-slate-400 text-[10px]">3 Sessions</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute top-1/2 -right-16 px-4 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-float" style="animation-delay: 0.8s;">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-white text-xs font-semibold">Presentations</div>
+                <div class="text-slate-400 text-[10px]">6 Decks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Video Demo Section -->
+<section id="demo" class="py-24 bg-gradient-to-b from-dark to-dark-light relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute top-0 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">See It In Action</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">
+        AI-Powered
+        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Developer Demos</span>
+      </h2>
+      <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+        Explore how AI tools like Windsurf and CoPilot accelerate real development workflows — from endpoint generation to diagramming.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Video Player (Left - 2 cols) -->
+      <div class="lg:col-span-2">
+        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-primary/10">
+          <div class="aspect-video bg-dark-light">
+            <video
+              #videoPlayer
+              class="w-full h-full object-cover"
+              controls
+              preload="metadata">
+              <source [src]="activeVideo().src" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20 rounded-2xl blur-xl -z-10"></div>
+        </div>
+        <!-- Now Playing Info -->
+        <div class="mt-5 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xl shrink-0">
+            {{ activeVideo().icon }}
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <h3 class="text-lg font-bold text-white">{{ activeVideo().title }}</h3>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold" [ngClass]="activeVideo().tagClass">{{ activeVideo().tag }}</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">{{ activeVideo().description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Playlist (Right - 1 col) -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center justify-between mb-4">
+          <h4 class="text-white font-semibold text-sm">Playlist</h4>
+          <span class="text-slate-500 text-xs">{{ demoVideos.length }} videos</span>
+        </div>
+        <div class="space-y-3 max-h-[480px] overflow-y-auto pr-1 custom-scrollbar">
+          @for (video of demoVideos; track video.id) {
+            <button
+              (click)="selectVideo(video)"
+              class="w-full text-left p-4 rounded-2xl border transition-all duration-300 group/item"
+              [class.bg-white/10]="activeVideo().id === video.id"
+              [class.border-primary/30]="activeVideo().id === video.id"
+              [class.shadow-lg]="activeVideo().id === video.id"
+              [class.shadow-primary/10]="activeVideo().id === video.id"
+              [class.bg-white/[0.03]]="activeVideo().id !== video.id"
+              [class.border-white/5]="activeVideo().id !== video.id"
+              [class.hover:bg-white/[0.07]]="activeVideo().id !== video.id"
+              [class.hover:border-white/10]="activeVideo().id !== video.id">
+              <div class="flex items-start gap-3">
+                <!-- Icon / Now Playing indicator -->
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0 transition-all"
+                     [class.bg-primary/20]="activeVideo().id === video.id"
+                     [class.bg-white/5]="activeVideo().id !== video.id">
+                  @if (activeVideo().id === video.id) {
+                    <div class="flex items-end gap-[3px] h-4">
+                      <span class="w-[3px] bg-primary rounded-full animate-eq-1"></span>
+                      <span class="w-[3px] bg-primary rounded-full animate-eq-2"></span>
+                      <span class="w-[3px] bg-primary rounded-full animate-eq-3"></span>
+                    </div>
+                  } @else {
+                    <span>{{ video.icon }}</span>
+                  }
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-sm font-semibold truncate"
+                          [class.text-white]="activeVideo().id === video.id"
+                          [class.text-slate-300]="activeVideo().id !== video.id">
+                      {{ video.title }}
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-medium" [ngClass]="video.tagClass">{{ video.tag }}</span>
+                  </div>
+                </div>
+              </div>
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why NPI AI Academy Section -->
+<section class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Why NPI AI Academy</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-3 mb-4">
+        Everything You Need to
+        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Grow with AI</span>
+      </h2>
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg">
+        At NPI AI Academy, we don't just teach AI—we teach people how to work with AI. Our platform blends expert knowledge, hands-on experience, and collaborative learning to help you turn AI into real-world impact.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Feature 1 -->
+      <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-dark mb-3">Human-Centered, Expert-Led Learning</h3>
+        <p class="text-slate-500 leading-relaxed">Learn from industry practitioners and AI experts who focus on practical application, not just theory—so you can confidently apply AI in your daily work.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:border-secondary/20 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-500">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-dark mb-3">Learn by Building</h3>
+        <p class="text-slate-500 leading-relaxed">Gain real experience through guided, hands-on projects in areas like computer vision, NLP, generative AI, and real-world business use cases.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:border-accent/20 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-dark mb-3">Skills That Matter</h3>
+        <p class="text-slate-500 leading-relaxed">Learn how to combine AI tools with human expertise to create solutions that work in real environments—not just in theory.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:border-green-500/20 hover:shadow-2xl hover:shadow-green-500/5 transition-all duration-500">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/10 to-green-500/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-dark mb-3">Stronger Together</h3>
+        <p class="text-slate-500 leading-relaxed">Collaborate through pair programming, peer learning, and mentorship. Our community supports growth, problem-solving, and shared success.</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:border-rose-500/20 hover:shadow-2xl hover:shadow-rose-500/5 transition-all duration-500">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/10 to-rose-500/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-7 h-7 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-dark mb-3">AI That Adapts to You</h3>
+        <p class="text-slate-500 leading-relaxed">Use AI-powered learning paths tailored to your goals, pace, and skill level—so your learning stays efficient, relevant, and engaging.</p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:border-violet-500/20 hover:shadow-2xl hover:shadow-violet-500/5 transition-all duration-500">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/10 to-violet-500/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-dark mb-3">Always Current</h3>
+        <p class="text-slate-500 leading-relaxed">Stay ahead with continuously updated content, tools, and insights inspired by the latest AI research and industry trends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Explore Our Content -->
+<section class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Explore Our Content</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-3 mb-4">Start Your AI Journey Today</h2>
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg">
+        Dive into demos, pair programming sessions, and presentations—all designed to help you learn AI by doing.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Demos -->
+      <a (click)="scrollToDemo()" class="cursor-pointer group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 block">
+        <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600">
+          <div class="h-full flex items-center justify-center">
+            <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">4 Videos</span>
+          </div>
+          <h3 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition-colors">AI Demos</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Watch real-world demonstrations of AI tools generating endpoints, user stories, diagrams, and more.</p>
+        </div>
+      </a>
+
+      <!-- Pair Programming -->
+      <a routerLink="/pair-programming" class="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 block">
+        <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600">
+          <div class="h-full flex items-center justify-center">
+            <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">3 Sessions</span>
+          </div>
+          <h3 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition-colors">Pair Programming</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Learn alongside peers in recorded pair programming sessions covering AI-assisted software development.</p>
+        </div>
+      </a>
+
+      <!-- Presentations -->
+      <a routerLink="/presentations" class="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 block">
+        <div class="h-48 bg-gradient-to-br from-violet-500 to-fuchsia-600">
+          <div class="h-full flex items-center justify-center">
+            <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700">6 Decks</span>
+          </div>
+          <h3 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition-colors">Presentations</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Browse slide decks on AI model comparisons, workflow creation, time estimation, and more.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24 bg-dark relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+  </div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+      Ready to Transform Your Career with
+      <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">AI?</span>
+    </h2>
+    <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+      Explore demos, pair programming sessions, and presentations—and start building real AI skills today.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a routerLink="/pair-programming"
+         class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300">
+        Start Learning
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
+      </a>
+      <a routerLink="/contributors"
+         class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-300">
+        Meet the Team
+      </a>
+    </div>
+  </div>
+</section>
