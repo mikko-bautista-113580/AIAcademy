@@ -49,6 +49,9 @@ def main():
         ("public/EstimatedTimeCreation.pptx", "public/slides/estimated-time"),
         ("public/ModelToUse.pptx", "public/slides/model-to-use"),
         ("public/Pull Request Roadmap.pptx", "public/slides/pr-roadmap"),
+        ("public/Automating Test Case Association in Azure DevOps.pptx", "public/slides/test-case-association"),
+        ("public/Automated GW Endpoint Generator.pptx", "public/slides/gw-endpoint-generator"),
+        ("public/Automated Microservice Endpoint Generator.pptx", "public/slides/microservice-endpoint-generator"),
     ]
     
     try:

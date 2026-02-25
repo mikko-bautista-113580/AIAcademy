@@ -39,6 +39,29 @@
   animation: eq-3 0.7s ease-in-out infinite;
 }
 
+/* Carousel progress animation */
+@keyframes carousel-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.carousel-progress {
+  animation: carousel-progress 5s linear forwards;
+}
+
+.carousel-fade-img {
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Scrollbar hide for carousel nav */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Custom scrollbar for playlist */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;

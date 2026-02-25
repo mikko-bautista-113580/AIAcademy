@@ -14,8 +14,7 @@ interface Presentation {
   gradient: string;
   tags: string[];
   workflowCreator: string;
-  estimatedTimeCreation: string;
-  modelUsed: string;
+  category: string;
 }
 
 @Component({
@@ -39,8 +38,7 @@ export class Presentations {
       gradient: 'from-primary to-primary-dark',
       tags: ['GPT-4', 'Claude', 'Gemini', 'Benchmarks'],
       workflowCreator: 'Cascade (Windsurf IDE)',
-      estimatedTimeCreation: '~45 minutes',
-      modelUsed: 'Claude 3.5 Sonnet'
+      category: 'AI Models & Selection',
     },
     {
       id: 'sep16',
@@ -55,8 +53,7 @@ export class Presentations {
       gradient: 'from-secondary to-secondary-dark',
       tags: ['Historical', 'AI Evolution', 'Comparison'],
       workflowCreator: 'Cascade (Windsurf IDE)',
-      estimatedTimeCreation: '~1 hour',
-      modelUsed: 'Claude 3.5 Sonnet'
+      category: 'AI Models & Selection',
     },
     {
       id: 'workflow-creator',
@@ -71,8 +68,7 @@ export class Presentations {
       gradient: 'from-violet-500 to-violet-700',
       tags: ['Workflow', 'Automation', 'AI Agents', 'Productivity'],
       workflowCreator: 'Cascade (Windsurf IDE)',
-      estimatedTimeCreation: '~30 minutes',
-      modelUsed: 'Claude 3.5 Sonnet'
+      category: 'Productivity & Workflows',
     },
     {
       id: 'estimated-time',
@@ -87,8 +83,7 @@ export class Presentations {
       gradient: 'from-amber-500 to-amber-700',
       tags: ['Time Estimation', 'Productivity', 'Metrics', 'Benchmarks'],
       workflowCreator: 'Cascade (Windsurf IDE)',
-      estimatedTimeCreation: '~40 minutes',
-      modelUsed: 'Claude 3.5 Sonnet'
+      category: 'Productivity & Workflows',
     },
     {
       id: 'model-to-use',
@@ -103,8 +98,7 @@ export class Presentations {
       gradient: 'from-emerald-500 to-emerald-700',
       tags: ['Model Selection', 'GPT-4', 'Claude', 'Decision Framework'],
       workflowCreator: 'Cascade (Windsurf IDE)',
-      estimatedTimeCreation: '~40 minutes',
-      modelUsed: 'Claude 3.5 Sonnet'
+      category: 'AI Models & Selection',
     },
     {
       id: 'pr-roadmap',
@@ -119,10 +113,76 @@ export class Presentations {
       gradient: 'from-blue-500 to-blue-700',
       tags: ['Pull Requests', 'Code Review', 'CI/CD', 'Git'],
       workflowCreator: 'Cascade (Windsurf IDE)',
-      estimatedTimeCreation: '~15 minutes',
-      modelUsed: 'Claude 3.5 Sonnet'
+      category: 'DevOps & CI/CD',
+    },
+    {
+      id: 'test-case-association',
+      title: 'Automating Test Case Association',
+      subtitle: 'Azure DevOps Test Automation',
+      description: 'A guide to automating test case association in Azure DevOps, streamlining the process of linking test cases to work items and improving test traceability across the development lifecycle.',
+      filename: 'Automating Test Case Association in Azure DevOps.pptx',
+      slidesPath: 'slides/test-case-association',
+      slideCount: 11,
+      date: '2025',
+      icon: '🧪',
+      gradient: 'from-cyan-500 to-cyan-700',
+      tags: ['Azure DevOps', 'Test Cases', 'Automation', 'Traceability'],
+      workflowCreator: 'Cascade (Windsurf IDE)',
+      category: 'DevOps & CI/CD',
+    },
+    {
+      id: 'gw-endpoint-generator',
+      title: 'Automated GW Endpoint Generator',
+      subtitle: 'Gateway API Automation',
+      description: 'An overview of the automated gateway endpoint generator that streamlines the creation of API gateway endpoints, reducing boilerplate code and ensuring consistency across services.',
+      filename: 'Automated GW Endpoint Generator.pptx',
+      slidesPath: 'slides/gw-endpoint-generator',
+      slideCount: 8,
+      date: '2025',
+      icon: '🌐',
+      gradient: 'from-rose-500 to-rose-700',
+      tags: ['API Gateway', 'Code Generation', 'Automation', 'Endpoints'],
+      workflowCreator: 'Cascade (Windsurf IDE)',
+      category: 'Code Generation',
+    },
+    {
+      id: 'microservice-endpoint-generator',
+      title: 'Automated Microservice Endpoint Generator',
+      subtitle: 'Microservice API Automation',
+      description: 'A deep dive into the automated microservice endpoint generator that accelerates API development by generating consistent, well-structured endpoints for microservice architectures.',
+      filename: 'Automated Microservice Endpoint Generator.pptx',
+      slidesPath: 'slides/microservice-endpoint-generator',
+      slideCount: 8,
+      date: '2025',
+      icon: '⚙️',
+      gradient: 'from-indigo-500 to-indigo-700',
+      tags: ['Microservices', 'Code Generation', 'Automation', 'API'],
+      workflowCreator: 'Cascade (Windsurf IDE)',
+      category: 'Code Generation',
     }
   ];
+
+  categories = [...new Set(this.presentations.map(p => p.category))];
+  activeCategory = signal<string | null>(null);
+
+  categoryMeta: Record<string, { icon: string; color: string; activeGradient: string }> = {
+    'AI Models & Selection': { icon: '🧠', color: 'bg-violet-100 text-violet-700 border-violet-200', activeGradient: 'from-violet-500 to-violet-700' },
+    'Productivity & Workflows': { icon: '⚡', color: 'bg-amber-100 text-amber-700 border-amber-200', activeGradient: 'from-amber-500 to-amber-700' },
+    'DevOps & CI/CD': { icon: '🔄', color: 'bg-blue-100 text-blue-700 border-blue-200', activeGradient: 'from-blue-500 to-blue-700' },
+    'Code Generation': { icon: '💻', color: 'bg-emerald-100 text-emerald-700 border-emerald-200', activeGradient: 'from-emerald-500 to-emerald-700' },
+  };
+
+  getCategoryCount(category: string): number {
+    return this.presentations.filter(p => p.category === category).length;
+  }
+
+  filteredPresentations = computed(() => {
+    const cat = this.activeCategory();
+    if (!cat) return this.presentations;
+    return this.presentations.filter(p => p.category === cat);
+  });
+
+  expandedDescription = signal<Presentation | null>(null);
 
   activePresentation = signal<Presentation | null>(null);
   slideImages = signal<string[]>([]);
@@ -188,6 +248,10 @@ export class Presentations {
 
   toggleFullscreen() {
     this.isFullscreen.update(v => !v);
+  }
+
+  setCategory(category: string | null) {
+    this.activeCategory.set(category);
   }
 
   downloadPresentation(pres: Presentation) {
