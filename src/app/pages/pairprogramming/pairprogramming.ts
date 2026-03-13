@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 interface Recording {
   id: string;
@@ -6,6 +7,7 @@ interface Recording {
   presenter: string;
   date: string;
   filename: string;
+  embedUrl?: string;
   description: string;
   gradient: string;
   icon: string;
@@ -18,13 +20,20 @@ interface Recording {
   styleUrl: './pairprogramming.scss',
 })
 export class PairProgramming {
+  private sanitizer = inject(DomSanitizer);
+
+  sanitizeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
   recordings: Recording[] = [
     {
       id: 'mark-echon',
       title: 'AI SDLC - Pair Programming',
       presenter: 'Mark Echon',
       date: 'November 12, 2025',
-      filename: '11.12.25 - AI SDLC - Pair Programming - (Mark Echon).mp4',
+      filename: '',
+      embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/11.12.25%20-%20AI%20SDLC%20-%20Pair%20Programming%20-%20(Mark%20Echon).mp4?csf=1&web=1&e=ymbYbx',
       description: 'Live pair programming session demonstrating AI-assisted software development lifecycle practices and real-time coding collaboration.',
       gradient: 'from-primary to-primary-dark',
       icon: '👨‍💻'
@@ -34,7 +43,8 @@ export class PairProgramming {
       title: 'AI SDLC - Pair Programming',
       presenter: 'Armando Lopez Jr.',
       date: 'November 11, 2025',
-      filename: '11.11.25 - AI SDLC - Pair Programming - (Armando Lopez Jr.).mp4',
+      filename: '',
+      embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/11.11.25%20-%20AI%20SDLC%20-%20Pair%20Programming%20-%20(Armando%20Lopez%20Jr.).mp4?csf=1&web=1&e=ymbYbx',
       description: 'Hands-on pair programming session showcasing AI-driven development workflows, code generation, and collaborative problem solving.',
       gradient: 'from-violet-500 to-violet-700',
       icon: '🤝'
@@ -44,7 +54,8 @@ export class PairProgramming {
       title: 'AI SDLC - Pair Programming',
       presenter: 'Alberto Terol',
       date: 'November 10, 2025',
-      filename: '11.10.25 - AI SDLC - Pair Programming  - (Alberto Terol).mp4',
+      filename: '',
+      embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/11.10.25%20-%20AI%20SDLC%20-%20Pair%20Programming%20%20-%20(Alberto%20Terol).mp4?csf=1&web=1&e=6b7buN',
       description: 'Interactive pair programming session exploring AI-powered coding tools, best practices, and efficient development techniques.',
       gradient: 'from-emerald-500 to-emerald-700',
       icon: '💻'
