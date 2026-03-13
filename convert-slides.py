@@ -52,6 +52,9 @@ def main():
         ("public/Automating Test Case Association in Azure DevOps.pptx", "public/slides/test-case-association"),
         ("public/Automated GW Endpoint Generator.pptx", "public/slides/gw-endpoint-generator"),
         ("public/Automated Microservice Endpoint Generator.pptx", "public/slides/microservice-endpoint-generator"),
+        ("public/Github_PR_Reviewer_V3.pptx", "public/slides/github-pr-reviewer"),
+        ("public/Requirements_to_Test_Case_Generator_v4.pptx", "public/slides/requirements-to-test-case"),
+        ("public/TestSuiteCreator.pptx", "public/slides/test-suite-creator"),
     ]
     
     try:
