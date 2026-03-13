@@ -1,5 +1,6 @@
-import { Component, signal, HostListener } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, signal, HostListener, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { RoleService } from '../../services/role.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,15 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Navbar {
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
+
+  roleService = inject(RoleService);
+  private router = inject(Router);
+
+  changeRole(): void {
+    this.roleService.clearRole();
+    this.closeMobileMenu();
+    this.router.navigate(['/select-role']);
+  }
 
   @HostListener('window:scroll')
   onScroll() {

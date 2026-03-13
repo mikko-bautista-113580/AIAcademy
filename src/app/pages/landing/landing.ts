@@ -1,6 +1,37 @@
-import { Component, signal, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, computed, inject, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { RoleService, Role } from '../../services/role.service';
+
+interface RoleTheme {
+  primary: string;
+  primaryDark: string;
+  primaryLight: string;
+  secondary: string;
+  secondaryDark: string;
+}
+
+interface RoleContent {
+  badge: string;
+  headline: string;
+  headlineHighlight: string;
+  description: string;
+  primaryCta: string;
+  primaryCtaLink: string;
+  demoSectionTitle: string;
+  demoSectionHighlight: string;
+  demoSectionDescription: string;
+  exploreSectionTitle: string;
+  exploreSectionDescription: string;
+  ctaTitle: string;
+  ctaTitleHighlight: string;
+  ctaDescription: string;
+  ctaPrimaryCta: string;
+  topicOrder: string[];
+  videoOrder: string[];
+  theme: RoleTheme;
+  heroBadges: { icon: string; label: string }[];
+}
 
 interface TopicHighlight {
   id: string;
@@ -38,6 +69,122 @@ export class Landing implements OnInit, OnDestroy {
   @ViewChild('carouselStrip') carouselStrip!: ElementRef<HTMLDivElement>;
 
   private carouselInterval: any;
+  private roleService = inject(RoleService);
+
+  private roleContentMap: Record<Role, RoleContent> = {
+    'QA': {
+      badge: 'AI-Powered Quality Engineering',
+      headline: 'Elevate Your',
+      headlineHighlight: 'Testing with AI',
+      description: 'Automate test case creation, streamline QA workflows, and catch defects faster. Learn how AI transforms quality assurance from manual effort into intelligent, continuous testing.',
+      primaryCta: 'Explore Test Automation',
+      primaryCtaLink: '/presentations',
+      demoSectionTitle: 'AI-Powered',
+      demoSectionHighlight: 'QA Demos',
+      demoSectionDescription: 'See how AI tools automate test case generation, link test cases to work items, and streamline your entire QA pipeline.',
+      exploreSectionTitle: 'Boost Your QA Workflow',
+      exploreSectionDescription: 'From automated test case association to AI-driven defect detection — explore tools and sessions built for quality engineers.',
+      ctaTitle: 'Ready to Automate Your',
+      ctaTitleHighlight: 'QA Workflow?',
+      ctaDescription: 'Discover how AI can help you write better test cases, automate regression testing, and ship with confidence.',
+      ctaPrimaryCta: 'Start Testing Smarter',
+      topicOrder: ['test-case-association', 'pr-roadmap', 'nov23', 'workflow-creator', 'gw-endpoint-generator', 'mark-echon', 'armando-lopez'],
+      videoOrder: ['api-endpoint', 'api-user-stories', 'mermaid-ai', 'user-story-copilot'],
+      theme: { primary: '#10b981', primaryDark: '#059669', primaryLight: '#34d399', secondary: '#14b8a6', secondaryDark: '#0d9488' },
+      heroBadges: [{ icon: '✅', label: 'Test Cases' }, { icon: '📊', label: 'Coverage' }, { icon: '🤖', label: 'Automation' }],
+    },
+    'BA': {
+      badge: 'AI-Driven Business Analysis',
+      headline: 'Transform',
+      headlineHighlight: 'Requirements with AI',
+      description: 'Draft user stories in seconds, generate acceptance criteria, and visualize workflows with AI. Learn how modern business analysts leverage AI to deliver clearer, faster requirements.',
+      primaryCta: 'See User Story Demos',
+      primaryCtaLink: '/presentations',
+      demoSectionTitle: 'AI-Powered',
+      demoSectionHighlight: 'BA Demos',
+      demoSectionDescription: 'Watch how AI tools generate comprehensive user stories, acceptance criteria, and visual diagrams from simple prompts.',
+      exploreSectionTitle: 'Sharpen Your BA Toolkit',
+      exploreSectionDescription: 'Explore demos and sessions on AI-assisted requirements gathering, user story creation, and workflow visualization.',
+      ctaTitle: 'Ready to Supercharge Your',
+      ctaTitleHighlight: 'Business Analysis?',
+      ctaDescription: 'Learn how AI helps you write better user stories, map processes visually, and collaborate more effectively with dev teams.',
+      ctaPrimaryCta: 'Start Analyzing Smarter',
+      topicOrder: ['workflow-creator', 'nov23', 'pr-roadmap', 'test-case-association', 'gw-endpoint-generator', 'mark-echon', 'armando-lopez'],
+      videoOrder: ['api-user-stories', 'user-story-copilot', 'mermaid-ai', 'api-endpoint'],
+      theme: { primary: '#f59e0b', primaryDark: '#d97706', primaryLight: '#fbbf24', secondary: '#f97316', secondaryDark: '#ea580c' },
+      heroBadges: [{ icon: '📋', label: 'User Stories' }, { icon: '🔄', label: 'Workflows' }, { icon: '📐', label: 'Diagrams' }],
+    },
+    'Developer': {
+      badge: 'AI-Accelerated Development',
+      headline: 'Code Faster with',
+      headlineHighlight: 'AI Pair Programming',
+      description: 'Generate production-ready code, automate boilerplate, and learn AI-assisted development through real-world pair programming sessions and live demos.',
+      primaryCta: 'Pair Programming',
+      primaryCtaLink: '/pair-programming',
+      demoSectionTitle: 'AI-Powered',
+      demoSectionHighlight: 'Developer Demos',
+      demoSectionDescription: 'Explore how AI tools like Windsurf and CoPilot accelerate real development workflows — from endpoint generation to diagramming.',
+      exploreSectionTitle: 'Level Up Your Dev Skills',
+      exploreSectionDescription: 'Dive into demos, pair programming sessions, and presentations — all designed to help you write better code faster with AI.',
+      ctaTitle: 'Ready to Transform Your',
+      ctaTitleHighlight: 'Development Workflow?',
+      ctaDescription: 'Explore demos, pair programming sessions, and presentations — and start building real AI-assisted development skills today.',
+      ctaPrimaryCta: 'Start Coding with AI',
+      topicOrder: ['gw-endpoint-generator', 'mark-echon', 'armando-lopez', 'nov23', 'workflow-creator', 'pr-roadmap', 'test-case-association'],
+      videoOrder: ['api-endpoint', 'mermaid-ai', 'api-user-stories', 'user-story-copilot'],
+      theme: { primary: '#6366f1', primaryDark: '#4f46e5', primaryLight: '#818cf8', secondary: '#0ea5e9', secondaryDark: '#0284c7' },
+      heroBadges: [{ icon: '▶️', label: 'Demos' }, { icon: '👥', label: 'Pair Programming' }, { icon: '📊', label: 'Presentations' }],
+    },
+    'Technical Lead': {
+      badge: 'AI for Technical Leadership',
+      headline: 'Lead Your Team with',
+      headlineHighlight: 'AI-Powered Strategy',
+      description: 'Evaluate AI models, architect smarter workflows, and guide your team with data-driven decisions. Learn how technical leaders leverage AI to ship better software, faster.',
+      primaryCta: 'Explore AI Models',
+      primaryCtaLink: '/presentations',
+      demoSectionTitle: 'AI-Powered',
+      demoSectionHighlight: 'Tech Lead Demos',
+      demoSectionDescription: 'See how AI tools can help you make architectural decisions, automate code reviews, and establish team-wide best practices.',
+      exploreSectionTitle: 'Architect Your AI Strategy',
+      exploreSectionDescription: 'From AI model comparisons to PR workflows and code generation — explore content designed for technical decision-makers.',
+      ctaTitle: 'Ready to Lead with',
+      ctaTitleHighlight: 'AI Intelligence?',
+      ctaDescription: 'Equip yourself with the knowledge to choose the right AI tools, mentor your team, and drive technical excellence.',
+      ctaPrimaryCta: 'Start Leading with AI',
+      topicOrder: ['nov23', 'pr-roadmap', 'gw-endpoint-generator', 'workflow-creator', 'mark-echon', 'armando-lopez', 'test-case-association'],
+      videoOrder: ['api-endpoint', 'mermaid-ai', 'api-user-stories', 'user-story-copilot'],
+      theme: { primary: '#06b6d4', primaryDark: '#0891b2', primaryLight: '#22d3ee', secondary: '#3b82f6', secondaryDark: '#2563eb' },
+      heroBadges: [{ icon: '🧠', label: 'AI Models' }, { icon: '🏗️', label: 'Architecture' }, { icon: '📝', label: 'Best Practices' }],
+    },
+    'Management': {
+      badge: 'AI Strategy for Leaders',
+      headline: 'Drive Team Success with',
+      headlineHighlight: 'AI Innovation',
+      description: 'Understand how AI transforms development workflows, boosts team productivity, and delivers measurable results. See the real impact of AI tools on your team\'s output.',
+      primaryCta: 'View Presentations',
+      primaryCtaLink: '/presentations',
+      demoSectionTitle: 'AI-Powered',
+      demoSectionHighlight: 'Productivity Demos',
+      demoSectionDescription: 'See real examples of how AI tools reduce development time, improve code quality, and accelerate delivery across your teams.',
+      exploreSectionTitle: 'Understand AI\'s Impact',
+      exploreSectionDescription: 'Browse demos, sessions, and presentations to see how AI is transforming software delivery — and what it means for your teams.',
+      ctaTitle: 'Ready to Transform Your',
+      ctaTitleHighlight: 'Team\'s Productivity?',
+      ctaDescription: 'Discover how AI tools can help your teams deliver faster, improve quality, and stay ahead of the competition.',
+      ctaPrimaryCta: 'Explore AI for Teams',
+      topicOrder: ['nov23', 'workflow-creator', 'pr-roadmap', 'test-case-association', 'gw-endpoint-generator', 'mark-echon', 'armando-lopez'],
+      videoOrder: ['api-endpoint', 'api-user-stories', 'user-story-copilot', 'mermaid-ai'],
+      theme: { primary: '#f43f5e', primaryDark: '#e11d48', primaryLight: '#fb7185', secondary: '#ec4899', secondaryDark: '#db2777' },
+      heroBadges: [{ icon: '📈', label: 'Team Impact' }, { icon: '💡', label: 'Innovation' }, { icon: '🎯', label: 'Strategy' }],
+    },
+  };
+
+  roleContent = computed(() => {
+    const role = this.roleService.selectedRole();
+    return role ? this.roleContentMap[role] : this.roleContentMap['Developer'];
+  });
+
+  currentRole = computed(() => this.roleService.selectedRole() ?? 'Developer');
 
   topicHighlights: TopicHighlight[] = [
     {
@@ -196,6 +343,21 @@ export class Landing implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    const content = this.roleContent();
+    const topicOrder = content.topicOrder;
+    this.topicHighlights.sort((a, b) => {
+      const ai = topicOrder.indexOf(a.id);
+      const bi = topicOrder.indexOf(b.id);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+    });
+    const videoOrder = content.videoOrder;
+    this.demoVideos.sort((a, b) => {
+      const ai = videoOrder.indexOf(a.id);
+      const bi = videoOrder.indexOf(b.id);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+    });
+    this.activeTopic.set(this.topicHighlights[0]);
+    this.activeVideo.set(this.demoVideos[0]);
     this.startCarousel();
   }
 
