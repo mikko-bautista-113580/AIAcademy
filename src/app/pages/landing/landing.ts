@@ -1,4 +1,5 @@
-import { Component, signal, computed, inject, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, computed, inject, ViewChild, ElementRef, OnInit, OnDestroy, SecurityContext } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { RoleService, Role } from '../../services/role.service';
@@ -53,6 +54,7 @@ interface DemoVideo {
   title: string;
   description: string;
   src: string;
+  embedUrl?: string;
   icon: string;
   tag: string;
   tagClass: string;
@@ -70,6 +72,11 @@ export class Landing implements OnInit, OnDestroy {
 
   private carouselInterval: any;
   private roleService = inject(RoleService);
+  private sanitizer = inject(DomSanitizer);
+
+  sanitizeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
   private roleContentMap: Record<Role, RoleContent> = {
     'QA': {
@@ -295,7 +302,8 @@ export class Landing implements OnInit, OnDestroy {
       id: 'api-endpoint',
       title: 'API Endpoint Generator',
       description: 'Watch how Windsurf AI generates production-ready API endpoints in minutes, automating boilerplate code and best practices.',
-      src: 'demo-video.mp4',
+      src: '',
+      embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/API%20Endpoint%20Generator%20Using%20Windsurf.mp4?csf=1&web=1&e=3aYmDK',
       icon: '🚀',
       tag: 'Windsurf',
       tagClass: 'bg-primary/15 text-primary'
@@ -304,7 +312,8 @@ export class Landing implements OnInit, OnDestroy {
       id: 'api-user-stories',
       title: 'Creating API User Stories',
       description: 'See how Windsurf streamlines the creation of comprehensive API user stories with acceptance criteria and technical specs.',
-      src: 'creating-api-user-stories.mp4',
+      src: '',
+      embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/CreatingAPI%20User%20Stories%20Efficiently%20with%20Windsurf.mp4?csf=1&web=1&e=dEp2JK',
       icon: '📋',
       tag: 'Windsurf',
       tagClass: 'bg-secondary/15 text-secondary'
@@ -313,7 +322,8 @@ export class Landing implements OnInit, OnDestroy {
       id: 'user-story-copilot',
       title: 'User Stories with CoPilot',
       description: 'Leverage GitHub CoPilot to rapidly draft and refine user stories with AI-assisted content generation.',
-      src: 'creating-user-story-copilot.mp4',
+      src: '',
+      embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/CreatingUserStoryUsingCoPilot.mp4?csf=1&web=1&e=vCEDH4',
       icon: '🤖',
       tag: 'CoPilot',
       tagClass: 'bg-green-500/15 text-green-500'
@@ -322,7 +332,8 @@ export class Landing implements OnInit, OnDestroy {
       id: 'mermaid-ai',
       title: 'Mermaid Integration with AI',
       description: 'Automatically generate visual diagrams and flowcharts from code and requirements using AI-powered Mermaid integration.',
-      src: 'mermaid-integration-ai.mp4',
+      src: '',
+      embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/Mermaid%20integration%20with%20AI.mp4?csf=1&web=1&e=TnBhCs',
       icon: '📊',
       tag: 'Diagrams',
       tagClass: 'bg-violet-500/15 text-violet-500'
