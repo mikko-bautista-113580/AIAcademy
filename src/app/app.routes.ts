@@ -3,6 +3,7 @@ import { Landing } from './pages/landing/landing';
 import { PairProgramming } from './pages/pairprogramming/pairprogramming';
 import { About } from './pages/about/about';
 import { Contributors } from './pages/contributors/contributors';
+import { AIChampions } from './pages/aichampions/aichampions';
 import { Presentations } from './pages/presentations/presentations';
 import { GetStarted } from './pages/getstarted/getstarted';
 import { RoleSelection } from './pages/roleselection/roleselection';
@@ -16,5 +17,6 @@ export const routes: Routes = [
   { path: 'presentations', component: Presentations, canActivate: [roleGuard] },
   { path: 'about', component: About, canActivate: [roleGuard] },
   { path: 'contributors', component: Contributors, canActivate: [roleGuard] },
+  { path: 'ai-champions', component: AIChampions, canActivate: [roleGuard] },
   { path: '**', redirectTo: '' }
 ];
