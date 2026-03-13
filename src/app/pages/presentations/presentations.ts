@@ -92,7 +92,7 @@ export class Presentations {
       description: 'A practical guide to selecting the right AI model for different tasks. Covers model strengths, weaknesses, cost considerations, and decision frameworks for choosing between GPT-4, Claude, Gemini, and others.',
       filename: 'ModelToUse.pptx',
       slidesPath: 'slides/model-to-use',
-      slideCount: 15,
+      slideCount: 14,
       date: '2025',
       icon: '🤖',
       gradient: 'from-emerald-500 to-emerald-700',
