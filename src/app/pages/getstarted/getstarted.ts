@@ -181,31 +181,39 @@ export class GetStarted {
     return this.reasonsByRole['Developer'];
   });
 
-  offerings = [
-    {
-      icon: '📊',
-      title: 'AI Presentations',
-      description: 'Curated slide decks covering AI models, tools, comparisons, and best practices—ready to learn from or share with your team.',
-      link: '/presentations',
-      linkText: 'Browse Presentations',
-      count: '6 Decks',
-    },
-    {
-      icon: '👨‍💻',
-      title: 'Pair Programming Sessions',
-      description: 'Live coding sessions demonstrating AI-assisted development—from generating APIs to building full-stack apps with AI copilots.',
-      link: '/pair-programming',
-      linkText: 'Watch Sessions',
-      count: '3 Sessions',
-    },
-    {
-      icon: '🎬',
-      title: 'AI Demo Videos',
-      description: 'Short, focused video demos showing real-world AI tools in action—see exactly how AI accelerates software development.',
-      link: '/',
-      fragment: 'demo',
-      linkText: 'View Demos',
-      count: '4 Demos',
-    },
-  ];
+  private offeringsByRole: Record<Role, { icon: string; title: string; description: string; link: string; fragment?: string; linkText: string; count: string }[]> = {
+    'Developer': [
+      { icon: '📊', title: 'AI Presentations', description: 'Slide decks on code generation, AI model comparisons, workflow automation, and developer-focused best practices.', link: '/presentations', linkText: 'Browse Presentations', count: '7 Decks' },
+      { icon: '👨‍💻', title: 'Pair Programming Sessions', description: 'Live coding sessions showcasing AI-assisted development—from generating APIs to building full-stack apps with AI copilots.', link: '/pair-programming', linkText: 'Watch Sessions', count: '3 Sessions' },
+      { icon: '🎬', title: 'AI Demo Videos', description: 'Watch AI tools generate API endpoints, create diagrams, and draft user stories—all in real time.', link: '/', fragment: 'demo', linkText: 'View Demos', count: '3 Demos' },
+    ],
+    'QA': [
+      { icon: '📊', title: 'AI Presentations', description: 'Slide decks covering test case automation, AI model comparisons, and quality engineering best practices.', link: '/presentations', linkText: 'Browse Presentations', count: '6 Decks' },
+      { icon: '👨‍💻', title: 'Pair Programming Sessions', description: 'Live sessions demonstrating AI-assisted testing workflows and automated test case generation.', link: '/pair-programming', linkText: 'Watch Sessions', count: '3 Sessions' },
+      { icon: '🎬', title: 'AI Demo Videos', description: 'See how AI tools create user stories, generate test cases, and streamline your QA pipeline.', link: '/', fragment: 'demo', linkText: 'View Demos', count: '3 Demos' },
+    ],
+    'BA': [
+      { icon: '📊', title: 'AI Presentations', description: 'Slide decks on AI-driven requirements analysis, user story creation, and business process automation.', link: '/presentations', linkText: 'Browse Presentations', count: '5 Decks' },
+      { icon: '👨‍💻', title: 'Pair Programming Sessions', description: 'Watch how AI tools assist in creating comprehensive user stories, acceptance criteria, and workflow diagrams.', link: '/pair-programming', linkText: 'Watch Sessions', count: '3 Sessions' },
+      { icon: '🎬', title: 'AI Demo Videos', description: 'Demos of AI-powered user story generation, diagram creation, and requirements documentation.', link: '/', fragment: 'demo', linkText: 'View Demos', count: '3 Demos' },
+    ],
+    'Technical Lead': [
+      { icon: '📊', title: 'AI Presentations', description: 'In-depth decks covering AI model selection, code generation, PR automation, and team workflow optimization.', link: '/presentations', linkText: 'Browse Presentations', count: '10 Decks' },
+      { icon: '👨‍💻', title: 'Pair Programming Sessions', description: 'Live coding sessions to evaluate AI-assisted development patterns and establish team-wide best practices.', link: '/pair-programming', linkText: 'Watch Sessions', count: '3 Sessions' },
+      { icon: '🎬', title: 'AI Demo Videos', description: 'See AI tools in action—endpoint generation, diagram creation, user story drafting, and more.', link: '/', fragment: 'demo', linkText: 'View Demos', count: '4 Demos' },
+    ],
+    'Management': [
+      { icon: '📊', title: 'AI Presentations', description: 'High-level overviews of AI capabilities, model comparisons, and estimated time savings for your teams.', link: '/presentations', linkText: 'Browse Presentations', count: '3 Decks' },
+      { icon: '👨‍💻', title: 'Pair Programming Sessions', description: 'Understand how your developers use AI in real coding workflows through recorded live sessions.', link: '/pair-programming', linkText: 'Watch Sessions', count: '3 Sessions' },
+      { icon: '🎬', title: 'AI Demo Videos', description: 'Quick video demos showing how AI tools accelerate user story creation and documentation.', link: '/', fragment: 'demo', linkText: 'View Demos', count: '2 Demos' },
+    ],
+  };
+
+  offerings = computed(() => {
+    const role = this.activeRole();
+    if (role && this.offeringsByRole[role]) {
+      return this.offeringsByRole[role];
+    }
+    return this.offeringsByRole['Developer'];
+  });
 }

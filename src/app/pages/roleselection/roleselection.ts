@@ -16,6 +16,13 @@ interface RoleOption {
   styleUrl: './roleselection.scss',
 })
 export class RoleSelection {
+  builderName = 'Mikko Bautista';
+  builderTitle = 'Software Engineer II';
+  buildStartDate = 'February 17, 2026';
+  buildEndDate = 'March 15, 2026';
+  buildHours = 10;
+  vibeCodingUrl = 'https://roadmap.sh/vibe-coding';
+
   roles: RoleOption[] = [
     {
       role: 'QA',

@@ -63,7 +63,7 @@
 
     <!-- What We Offer -->
     <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
-      @for (offering of offerings; track offering.title) {
+      @for (offering of offerings(); track offering.title) {
         <a [routerLink]="offering.link" [fragment]="offering.fragment"
            class="group relative p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-primary/30 transition-all duration-300 block">
           <div class="flex items-center justify-between mb-4">

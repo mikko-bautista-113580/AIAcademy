@@ -4,6 +4,7 @@ import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 import { filter, map } from 'rxjs/operators';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RoleService } from './services/role.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,9 @@ export class App {
   title = 'NPI AI Academy';
 
   private router = inject(Router);
+  private roleService = inject(RoleService);
+
+  theme = this.roleService.theme;
 
   showLayout = toSignal(
     this.router.events.pipe(

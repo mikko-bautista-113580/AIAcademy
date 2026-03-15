@@ -66,5 +66,101 @@
     <p class="text-center text-slate-500 text-sm mt-10">
       Your selection helps us tailor content and recommendations for your role
     </p>
+
+    <!-- How This Was Built -->
+    <div class="mt-16 max-w-4xl mx-auto">
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+        <!-- Gradient accent -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary"></div>
+
+        <div class="p-8 sm:p-10">
+          <!-- Header -->
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-2xl shrink-0">
+              ⚡
+            </div>
+            <div>
+              <h2 class="text-xl sm:text-2xl font-bold text-white mb-1">How This Platform Was Built</h2>
+              <p class="text-slate-400 text-sm">A proof that AI can turn ideas into reality</p>
+            </div>
+          </div>
+
+          <!-- Author -->
+          <div class="flex items-center gap-3 mb-6 p-3 rounded-xl bg-white/[0.04] border border-white/[0.06] w-fit">
+            <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista"
+                 class="w-10 h-10 rounded-full object-cover ring-2 ring-primary/40">
+            <div>
+              <p class="text-white font-semibold text-sm leading-tight">{{ builderName }}</p>
+              <p class="text-slate-400 text-xs">{{ builderTitle }}</p>
+            </div>
+          </div>
+
+          <!-- Story -->
+          <div class="space-y-4 text-slate-300 leading-relaxed text-[15px]">
+            <p>
+              Everything you see on <span class="text-white font-semibold">NPI AI Academy</span> — the role-based learning paths, interactive presentations, pair programming sessions, demo videos, and this entire design — was built in just
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-primary/15 border border-primary/25 rounded-lg text-primary font-bold text-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                {{ buildHours }} hours
+              </span>
+              of development time.
+            </p>
+
+            <p>
+              The goal was simple: <span class="text-white font-medium">prove that with AI, anyone can turn their ideas into a fully functional, professionally designed application.</span> This platform was created from {{ buildStartDate }} to {{ buildEndDate }} using a method called <span class="text-white font-semibold">Vibe Coding</span>.
+            </p>
+          </div>
+
+          <!-- Vibe Coding Card -->
+          <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500/20 to-indigo-500/20 flex items-center justify-center">
+                <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <h3 class="text-lg font-bold text-white">What is Vibe Coding?</h3>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-4">
+              <span class="text-white font-semibold">Vibe Coding</span> is a software development method where you use AI and LLMs to generate code via natural-language prompts rather than writing it by hand. You describe what you want the application to do, and AI builds it.
+            </p>
+            <div class="grid sm:grid-cols-3 gap-3 mb-5">
+              <div class="flex items-start gap-2.5 p-3 rounded-xl bg-white/[0.04]">
+                <span class="text-emerald-400 text-lg mt-0.5">🚀</span>
+                <div>
+                  <p class="text-white text-sm font-semibold">Fast Prototyping</p>
+                  <p class="text-slate-400 text-xs mt-0.5">Go from idea to working app in hours, not weeks</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5 p-3 rounded-xl bg-white/[0.04]">
+                <span class="text-amber-400 text-lg mt-0.5">💬</span>
+                <div>
+                  <p class="text-white text-sm font-semibold">Natural Language</p>
+                  <p class="text-slate-400 text-xs mt-0.5">Describe what you want — AI writes the code</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5 p-3 rounded-xl bg-white/[0.04]">
+                <span class="text-cyan-400 text-lg mt-0.5">🌐</span>
+                <div>
+                  <p class="text-white text-sm font-semibold">Accessible to All</p>
+                  <p class="text-slate-400 text-xs mt-0.5">You don't need to be a traditional programmer</p>
+                </div>
+              </div>
+            </div>
+            <a [href]="vibeCodingUrl" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.06] border border-white/10 text-sm text-slate-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Learn more about Vibe Coding on roadmap.sh
+            </a>
+          </div>
+
+          <!-- Takeaway -->
+          <div class="mt-6 flex items-start gap-3 p-4 rounded-2xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/15">
+            <span class="text-2xl">💡</span>
+            <p class="text-slate-200 leading-relaxed text-[15px]">
+              <span class="text-white font-semibold">The takeaway:</span> You don't need months of development or a large team to bring your ideas to life. With AI as your partner, you can build something real, functional, and impactful — just like this platform. If I can build NPI AI Academy in {{ buildHours }} hours, imagine what <span class="text-primary font-semibold">you</span> can create.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

@@ -87,12 +87,12 @@
     <!-- Section label -->
     <div class="flex items-center gap-3 mb-10">
       <div class="h-px flex-1 bg-gradient-to-r from-white/[0.08] to-transparent"></div>
-      <span class="text-xs font-medium uppercase tracking-widest text-slate-500">{{ recordings.length }} Sessions Available</span>
+      <span class="text-xs font-medium uppercase tracking-widest text-slate-500">{{ filteredRecordings().length }} Sessions Available</span>
       <div class="h-px flex-1 bg-gradient-to-l from-white/[0.08] to-transparent"></div>
     </div>
 
     <div class="grid gap-6 md:grid-cols-3">
-      @for (rec of recordings; track rec.id; let i = $index) {
+      @for (rec of filteredRecordings(); track rec.id; let i = $index) {
         <div class="group relative rounded-2xl overflow-hidden bg-white/[0.03] border border-white/[0.06] hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-500 card-hover">
           <!-- Thumbnail -->
           <div class="relative aspect-video cursor-pointer overflow-hidden" (click)="playRecording(rec)">

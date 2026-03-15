@@ -1,9 +1,15 @@
-@if (showLayout()) {
-  <app-navbar></app-navbar>
-}
-<main>
-  <router-outlet />
-</main>
-@if (showLayout()) {
-  <app-footer></app-footer>
-}
+<div [style.--color-primary]="theme().primary"
+     [style.--color-primary-dark]="theme().primaryDark"
+     [style.--color-primary-light]="theme().primaryLight"
+     [style.--color-secondary]="theme().secondary"
+     [style.--color-secondary-dark]="theme().secondaryDark">
+  @if (showLayout()) {
+    <app-navbar></app-navbar>
+  }
+  <main>
+    <router-outlet />
+  </main>
+  @if (showLayout()) {
+    <app-footer></app-footer>
+  }
+</div>

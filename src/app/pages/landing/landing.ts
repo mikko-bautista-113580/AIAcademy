@@ -4,14 +4,6 @@ import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { RoleService, Role } from '../../services/role.service';
 
-interface RoleTheme {
-  primary: string;
-  primaryDark: string;
-  primaryLight: string;
-  secondary: string;
-  secondaryDark: string;
-}
-
 interface RoleContent {
   badge: string;
   headline: string;
@@ -30,7 +22,6 @@ interface RoleContent {
   ctaPrimaryCta: string;
   topicOrder: string[];
   videoOrder: string[];
-  theme: RoleTheme;
   heroBadges: { icon: string; label: string }[];
 }
 
@@ -47,6 +38,7 @@ interface TopicHighlight {
   slidesPath: string;
   slideCount: number;
   route: string;
+  roles: Role[];
 }
 
 interface DemoVideo {
@@ -58,6 +50,7 @@ interface DemoVideo {
   icon: string;
   tag: string;
   tagClass: string;
+  roles: Role[];
 }
 
 @Component({
@@ -97,7 +90,6 @@ export class Landing implements OnInit, OnDestroy {
       ctaPrimaryCta: 'Start Testing Smarter',
       topicOrder: ['test-case-association', 'pr-roadmap', 'nov23', 'workflow-creator', 'gw-endpoint-generator', 'mark-echon', 'armando-lopez'],
       videoOrder: ['api-endpoint', 'api-user-stories', 'mermaid-ai', 'user-story-copilot'],
-      theme: { primary: '#10b981', primaryDark: '#059669', primaryLight: '#34d399', secondary: '#14b8a6', secondaryDark: '#0d9488' },
       heroBadges: [{ icon: '✅', label: 'Test Cases' }, { icon: '📊', label: 'Coverage' }, { icon: '🤖', label: 'Automation' }],
     },
     'BA': {
@@ -118,7 +110,6 @@ export class Landing implements OnInit, OnDestroy {
       ctaPrimaryCta: 'Start Analyzing Smarter',
       topicOrder: ['workflow-creator', 'nov23', 'pr-roadmap', 'test-case-association', 'gw-endpoint-generator', 'mark-echon', 'armando-lopez'],
       videoOrder: ['api-user-stories', 'user-story-copilot', 'mermaid-ai', 'api-endpoint'],
-      theme: { primary: '#f59e0b', primaryDark: '#d97706', primaryLight: '#fbbf24', secondary: '#f97316', secondaryDark: '#ea580c' },
       heroBadges: [{ icon: '📋', label: 'User Stories' }, { icon: '🔄', label: 'Workflows' }, { icon: '📐', label: 'Diagrams' }],
     },
     'Developer': {
@@ -139,7 +130,6 @@ export class Landing implements OnInit, OnDestroy {
       ctaPrimaryCta: 'Start Coding with AI',
       topicOrder: ['gw-endpoint-generator', 'mark-echon', 'armando-lopez', 'nov23', 'workflow-creator', 'pr-roadmap', 'test-case-association'],
       videoOrder: ['api-endpoint', 'mermaid-ai', 'api-user-stories', 'user-story-copilot'],
-      theme: { primary: '#6366f1', primaryDark: '#4f46e5', primaryLight: '#818cf8', secondary: '#0ea5e9', secondaryDark: '#0284c7' },
       heroBadges: [{ icon: '▶️', label: 'Demos' }, { icon: '👥', label: 'Pair Programming' }, { icon: '📊', label: 'Presentations' }],
     },
     'Technical Lead': {
@@ -160,7 +150,6 @@ export class Landing implements OnInit, OnDestroy {
       ctaPrimaryCta: 'Start Leading with AI',
       topicOrder: ['nov23', 'pr-roadmap', 'gw-endpoint-generator', 'workflow-creator', 'mark-echon', 'armando-lopez', 'test-case-association'],
       videoOrder: ['api-endpoint', 'mermaid-ai', 'api-user-stories', 'user-story-copilot'],
-      theme: { primary: '#06b6d4', primaryDark: '#0891b2', primaryLight: '#22d3ee', secondary: '#3b82f6', secondaryDark: '#2563eb' },
       heroBadges: [{ icon: '🧠', label: 'AI Models' }, { icon: '🏗️', label: 'Architecture' }, { icon: '📝', label: 'Best Practices' }],
     },
     'Management': {
@@ -181,7 +170,6 @@ export class Landing implements OnInit, OnDestroy {
       ctaPrimaryCta: 'Explore AI for Teams',
       topicOrder: ['nov23', 'workflow-creator', 'pr-roadmap', 'test-case-association', 'gw-endpoint-generator', 'mark-echon', 'armando-lopez'],
       videoOrder: ['api-endpoint', 'api-user-stories', 'user-story-copilot', 'mermaid-ai'],
-      theme: { primary: '#f43f5e', primaryDark: '#e11d48', primaryLight: '#fb7185', secondary: '#ec4899', secondaryDark: '#db2777' },
       heroBadges: [{ icon: '📈', label: 'Team Impact' }, { icon: '💡', label: 'Innovation' }, { icon: '🎯', label: 'Strategy' }],
     },
   };
@@ -207,6 +195,7 @@ export class Landing implements OnInit, OnDestroy {
       slidesPath: 'slides/nov23',
       slideCount: 25,
       route: '/presentations',
+      roles: ['QA', 'BA', 'Developer', 'Technical Lead', 'Management'],
     },
     {
       id: 'workflow-creator',
@@ -221,6 +210,7 @@ export class Landing implements OnInit, OnDestroy {
       slidesPath: 'slides/workflow-creator',
       slideCount: 10,
       route: '/presentations',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'test-case-association',
@@ -235,6 +225,7 @@ export class Landing implements OnInit, OnDestroy {
       slidesPath: 'slides/test-case-association',
       slideCount: 11,
       route: '/presentations',
+      roles: ['QA', 'BA', 'Technical Lead'],
     },
     {
       id: 'mark-echon',
@@ -249,6 +240,7 @@ export class Landing implements OnInit, OnDestroy {
       slidesPath: '',
       slideCount: 0,
       route: '/pair-programming',
+      roles: ['QA', 'BA', 'Developer', 'Technical Lead', 'Management'],
     },
     {
       id: 'gw-endpoint-generator',
@@ -263,6 +255,7 @@ export class Landing implements OnInit, OnDestroy {
       slidesPath: 'slides/gw-endpoint-generator',
       slideCount: 8,
       route: '/presentations',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'armando-lopez',
@@ -277,6 +270,7 @@ export class Landing implements OnInit, OnDestroy {
       slidesPath: '',
       slideCount: 0,
       route: '/pair-programming',
+      roles: ['QA', 'BA', 'Developer', 'Technical Lead', 'Management'],
     },
     {
       id: 'pr-roadmap',
@@ -291,6 +285,7 @@ export class Landing implements OnInit, OnDestroy {
       slidesPath: 'slides/pr-roadmap',
       slideCount: 1,
       route: '/presentations',
+      roles: ['Developer', 'Technical Lead'],
     },
   ];
 
@@ -306,7 +301,8 @@ export class Landing implements OnInit, OnDestroy {
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/API%20Endpoint%20Generator%20Using%20Windsurf.mp4?csf=1&web=1&e=3aYmDK',
       icon: '🚀',
       tag: 'Windsurf',
-      tagClass: 'bg-primary/15 text-primary'
+      tagClass: 'bg-primary/15 text-primary',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'api-user-stories',
@@ -316,7 +312,8 @@ export class Landing implements OnInit, OnDestroy {
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/CreatingAPI%20User%20Stories%20Efficiently%20with%20Windsurf.mp4?csf=1&web=1&e=dEp2JK',
       icon: '📋',
       tag: 'Windsurf',
-      tagClass: 'bg-secondary/15 text-secondary'
+      tagClass: 'bg-secondary/15 text-secondary',
+      roles: ['BA', 'QA', 'Developer', 'Technical Lead'],
     },
     {
       id: 'user-story-copilot',
@@ -326,7 +323,8 @@ export class Landing implements OnInit, OnDestroy {
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/CreatingUserStoryUsingCoPilot.mp4?csf=1&web=1&e=vCEDH4',
       icon: '🤖',
       tag: 'CoPilot',
-      tagClass: 'bg-green-500/15 text-green-500'
+      tagClass: 'bg-green-500/15 text-green-500',
+      roles: ['BA', 'QA', 'Management'],
     },
     {
       id: 'mermaid-ai',
@@ -336,7 +334,8 @@ export class Landing implements OnInit, OnDestroy {
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/Mermaid%20integration%20with%20AI.mp4?csf=1&web=1&e=TnBhCs',
       icon: '📊',
       tag: 'Diagrams',
-      tagClass: 'bg-violet-500/15 text-violet-500'
+      tagClass: 'bg-violet-500/15 text-violet-500',
+      roles: ['Developer', 'BA', 'Technical Lead'],
     }
   ];
 
@@ -353,22 +352,45 @@ export class Landing implements OnInit, OnDestroy {
     }
   }
 
+  filteredTopics: TopicHighlight[] = [];
+  filteredDemos: DemoVideo[] = [];
+  pairProgrammingCount = 0;
+  presentationCount = 0;
+
+  private presentationCountByRole: Record<Role, number> = {
+    'QA': 6, 'BA': 6, 'Developer': 8, 'Technical Lead': 11, 'Management': 4,
+  };
+
   ngOnInit() {
     const content = this.roleContent();
-    const topicOrder = content.topicOrder;
-    this.topicHighlights.sort((a, b) => {
-      const ai = topicOrder.indexOf(a.id);
-      const bi = topicOrder.indexOf(b.id);
-      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
-    });
-    const videoOrder = content.videoOrder;
-    this.demoVideos.sort((a, b) => {
-      const ai = videoOrder.indexOf(a.id);
-      const bi = videoOrder.indexOf(b.id);
-      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
-    });
-    this.activeTopic.set(this.topicHighlights[0]);
-    this.activeVideo.set(this.demoVideos[0]);
+    const role = this.roleService.selectedRole();
+
+    // Filter by role then sort by role-specific order
+    this.filteredTopics = this.topicHighlights
+      .filter(t => !role || t.roles.includes(role))
+      .sort((a, b) => {
+        const ai = content.topicOrder.indexOf(a.id);
+        const bi = content.topicOrder.indexOf(b.id);
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      });
+
+    this.filteredDemos = this.demoVideos
+      .filter(d => !role || d.roles.includes(role))
+      .sort((a, b) => {
+        const ai = content.videoOrder.indexOf(a.id);
+        const bi = content.videoOrder.indexOf(b.id);
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      });
+
+    this.pairProgrammingCount = 3;
+    this.presentationCount = role ? this.presentationCountByRole[role] : 12;
+
+    if (this.filteredTopics.length > 0) {
+      this.activeTopic.set(this.filteredTopics[0]);
+    }
+    if (this.filteredDemos.length > 0) {
+      this.activeVideo.set(this.filteredDemos[0]);
+    }
     this.startCarousel();
   }
 
@@ -408,23 +430,23 @@ export class Landing implements OnInit, OnDestroy {
   }
 
   nextTopic() {
-    const next = (this.activeTopicIndex() + 1) % this.topicHighlights.length;
+    const next = (this.activeTopicIndex() + 1) % this.filteredTopics.length;
     this.activeTopicIndex.set(next);
-    this.activeTopic.set(this.topicHighlights[next]);
+    this.activeTopic.set(this.filteredTopics[next]);
     this.scrollActiveIntoView();
   }
 
   prevTopic() {
-    const prev = (this.activeTopicIndex() - 1 + this.topicHighlights.length) % this.topicHighlights.length;
+    const prev = (this.activeTopicIndex() - 1 + this.filteredTopics.length) % this.filteredTopics.length;
     this.activeTopicIndex.set(prev);
-    this.activeTopic.set(this.topicHighlights[prev]);
+    this.activeTopic.set(this.filteredTopics[prev]);
     this.scrollActiveIntoView();
   }
 
   goToTopic(index: number) {
     this.stopCarousel();
     this.activeTopicIndex.set(index);
-    this.activeTopic.set(this.topicHighlights[index]);
+    this.activeTopic.set(this.filteredTopics[index]);
     this.scrollActiveIntoView();
     this.startCarousel();
   }
