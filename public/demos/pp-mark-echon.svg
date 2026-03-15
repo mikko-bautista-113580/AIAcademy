@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Glow -->
+  <circle cx="200" cy="150" r="180" fill="#3b82f6" opacity="0.06"/>
+  <circle cx="600" cy="300" r="150" fill="#8b5cf6" opacity="0.06"/>
+  <!-- Left: Visual Studio IDE -->
+  <rect x="40" y="55" width="230" height="200" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="40" y="55" width="230" height="28" rx="10" fill="#334155"/>
+  <rect x="40" y="73" width="230" height="10" fill="#334155"/>
+  <circle cx="58" cy="69" r="4" fill="#ef4444" opacity="0.8"/>
+  <circle cx="72" cy="69" r="4" fill="#eab308" opacity="0.8"/>
+  <circle cx="86" cy="69" r="4" fill="#22c55e" opacity="0.8"/>
+  <text x="155" y="72" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="9">Visual Studio</text>
+  <!-- VS content -->
+  <text x="55" y="100" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="bold">SOLUTION EXPLORER</text>
+  <text x="60" y="115" fill="#94a3b8" font-family="monospace" font-size="8">📁 Gateway.API</text>
+  <text x="72" y="128" fill="#94a3b8" font-family="monospace" font-size="8">📁 Controllers</text>
+  <text x="72" y="141" fill="#94a3b8" font-family="monospace" font-size="8">📁 Models</text>
+  <text x="72" y="154" fill="#94a3b8" font-family="monospace" font-size="8">📁 Services</text>
+  <text x="60" y="170" fill="#94a3b8" font-family="monospace" font-size="8">📁 Microservice.API</text>
+  <text x="72" y="183" fill="#94a3b8" font-family="monospace" font-size="8">📁 Queries</text>
+  <rect x="55" y="195" width="200" height="18" rx="3" fill="#3b82f6" opacity="0.1"/>
+  <text x="65" y="208" fill="#93c5fd" font-family="sans-serif" font-size="8">🔨 Build • Publish • Debug</text>
+  <!-- Plus sign between IDEs -->
+  <text x="295" y="160" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="28" font-weight="bold">+</text>
+  <!-- Right: Windsurf IDE -->
+  <rect x="320" y="55" width="230" height="200" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+  <rect x="320" y="55" width="230" height="28" rx="10" fill="#8b5cf6" opacity="0.2"/>
+  <rect x="320" y="73" width="230" height="10" fill="#8b5cf6" opacity="0.2"/>
+  <circle cx="338" cy="69" r="4" fill="#ef4444" opacity="0.8"/>
+  <circle cx="352" cy="69" r="4" fill="#eab308" opacity="0.8"/>
+  <circle cx="366" cy="69" r="4" fill="#22c55e" opacity="0.8"/>
+  <text x="435" y="72" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="9">Windsurf IDE</text>
+  <!-- Windsurf content - workflow steps -->
+  <text x="335" y="100" fill="#c4b5fd" font-family="sans-serif" font-size="8" font-weight="bold">AI WORKFLOW</text>
+  <rect x="335" y="108" width="200" height="22" rx="4" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="0.8"/>
+  <text x="345" y="123" fill="#86efac" font-family="sans-serif" font-size="8">✅ 1. Service Architecture Doc</text>
+  <rect x="335" y="134" width="200" height="22" rx="4" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="0.8"/>
+  <text x="345" y="149" fill="#86efac" font-family="sans-serif" font-size="8">✅ 2. Research Document</text>
+  <rect x="335" y="160" width="200" height="22" rx="4" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="345" y="175" fill="#93c5fd" font-family="sans-serif" font-size="8">🔄 3. Implementation Plan</text>
+  <rect x="335" y="186" width="200" height="22" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+  <text x="345" y="201" fill="#64748b" font-family="sans-serif" font-size="8">⏳ 4. User Story Creation</text>
+  <rect x="335" y="216" width="200" height="22" rx="4" fill="#8b5cf6" opacity="0.1"/>
+  <text x="345" y="231" fill="#c4b5fd" font-family="sans-serif" font-size="8">🤖 Cascade • MCP Connected</text>
+  <!-- Bottom: Azure DevOps integration -->
+  <rect x="590" y="55" width="170" height="200" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="590" y="55" width="170" height="28" rx="10" fill="#3b82f6" opacity="0.15"/>
+  <rect x="590" y="73" width="170" height="10" fill="#3b82f6" opacity="0.15"/>
+  <text x="675" y="72" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="9">Azure DevOps</text>
+  <text x="605" y="100" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="bold">WORK ITEMS</text>
+  <rect x="605" y="108" width="140" height="25" rx="4" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="0.8"/>
+  <text x="615" y="118" fill="#86efac" font-family="sans-serif" font-size="7" font-weight="bold">Feature</text>
+  <text x="615" y="128" fill="#64748b" font-family="sans-serif" font-size="7">API Endpoint - GET</text>
+  <rect x="605" y="138" width="140" height="25" rx="4" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="615" y="148" fill="#93c5fd" font-family="sans-serif" font-size="7" font-weight="bold">User Story</text>
+  <text x="615" y="158" fill="#64748b" font-family="sans-serif" font-size="7">MS GET Tracking Data</text>
+  <rect x="605" y="168" width="140" height="25" rx="4" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="615" y="178" fill="#93c5fd" font-family="sans-serif" font-size="7" font-weight="bold">User Story</text>
+  <text x="615" y="188" fill="#64748b" font-family="sans-serif" font-size="7">GW GET Tracking Data</text>
+  <rect x="605" y="198" width="140" height="25" rx="4" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="615" y="208" fill="#fbbf24" font-family="sans-serif" font-size="7" font-weight="bold">Template</text>
+  <text x="615" y="218" fill="#64748b" font-family="sans-serif" font-size="7">Standardized Format</text>
+  <!-- .NET Framework badge -->
+  <rect x="40" y="270" width="710" height="50" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="292" fill="#c4b5fd" font-family="sans-serif" font-size="10" font-weight="bold">🏢 Legacy .NET Framework Enterprise Project</text>
+  <text x="60" y="308" fill="#64748b" font-family="sans-serif" font-size="9">Dual IDE Strategy: Visual Studio for build/publish/debug + Windsurf for AI-powered workflows and automation</text>
+  <!-- Arrows connecting -->
+  <line x1="270" y1="220" x2="320" y2="220" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="550" y1="155" x2="590" y2="155" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+  <!-- Title -->
+  <text x="400" y="365" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">Pair Programming — Mark Echon</text>
+  <text x="400" y="387" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="13">Dual IDE • .NET Framework • Windsurf Workflows • MCP + Azure DevOps</text>
+  <!-- Date badge -->
+  <rect x="310" y="400" width="180" height="24" rx="12" fill="#3b82f6" opacity="0.15"/>
+  <text x="400" y="416" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="10">📅 November 12, 2025</text>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Glow -->
+  <circle cx="400" cy="180" r="200" fill="#8b5cf6" opacity="0.06"/>
+  <circle cx="150" cy="350" r="120" fill="#a855f7" opacity="0.05"/>
+  <!-- Top: Bug investigation workflow -->
+  <rect x="40" y="50" width="720" height="35" rx="8" fill="#ef4444" opacity="0.08" stroke="#ef4444" stroke-width="1"/>
+  <text x="400" y="72" text-anchor="middle" fill="#fca5a5" font-family="sans-serif" font-size="12" font-weight="bold">🐛 Bug Investigation Workflow — .NET API Project</text>
+  <!-- Step 1: Service Overview -->
+  <rect x="40" y="105" width="165" height="140" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <rect x="40" y="105" width="165" height="26" rx="10" fill="#22c55e" opacity="0.15"/>
+  <rect x="40" y="121" width="165" height="10" fill="#22c55e" opacity="0.15"/>
+  <text x="122" y="122" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="9" font-weight="bold">Step 1 ✅</text>
+  <text x="55" y="150" fill="#86efac" font-family="sans-serif" font-size="10" font-weight="bold">Service Overview</text>
+  <text x="55" y="165" fill="#94a3b8" font-family="sans-serif" font-size="8">Architecture docs</text>
+  <text x="55" y="178" fill="#94a3b8" font-family="sans-serif" font-size="8">Dependencies map</text>
+  <text x="55" y="191" fill="#94a3b8" font-family="sans-serif" font-size="8">Endpoint inventory</text>
+  <rect x="55" y="200" width="135" height="18" rx="3" fill="#22c55e" opacity="0.1"/>
+  <text x="65" y="213" fill="#22c55e" font-family="sans-serif" font-size="8">✅ Review → Approve</text>
+  <!-- Arrow -->
+  <line x1="205" y1="175" x2="230" y2="175" stroke="#64748b" stroke-width="2"/>
+  <polygon points="226,170 236,175 226,180" fill="#64748b"/>
+  <!-- Step 2: Research -->
+  <rect x="240" y="105" width="165" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="240" y="105" width="165" height="26" rx="10" fill="#3b82f6" opacity="0.15"/>
+  <rect x="240" y="121" width="165" height="10" fill="#3b82f6" opacity="0.15"/>
+  <text x="322" y="122" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="9" font-weight="bold">Step 2 ✅</text>
+  <text x="255" y="150" fill="#93c5fd" font-family="sans-serif" font-size="10" font-weight="bold">Research Document</text>
+  <text x="255" y="165" fill="#94a3b8" font-family="sans-serif" font-size="8">Root cause analysis</text>
+  <text x="255" y="178" fill="#94a3b8" font-family="sans-serif" font-size="8">Impact assessment</text>
+  <text x="255" y="191" fill="#94a3b8" font-family="sans-serif" font-size="8">Solution options</text>
+  <rect x="255" y="200" width="135" height="18" rx="3" fill="#3b82f6" opacity="0.1"/>
+  <text x="265" y="213" fill="#3b82f6" font-family="sans-serif" font-size="8">✅ Review → Approve</text>
+  <!-- Arrow -->
+  <line x1="405" y1="175" x2="430" y2="175" stroke="#64748b" stroke-width="2"/>
+  <polygon points="426,170 436,175 426,180" fill="#64748b"/>
+  <!-- Step 3: Implementation -->
+  <rect x="440" y="105" width="165" height="140" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="440" y="105" width="165" height="26" rx="10" fill="#f59e0b" opacity="0.15"/>
+  <rect x="440" y="121" width="165" height="10" fill="#f59e0b" opacity="0.15"/>
+  <text x="522" y="122" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-size="9" font-weight="bold">Step 3 🔄</text>
+  <text x="455" y="150" fill="#fbbf24" font-family="sans-serif" font-size="10" font-weight="bold">Implementation Plan</text>
+  <text x="455" y="165" fill="#94a3b8" font-family="sans-serif" font-size="8">Code changes spec</text>
+  <text x="455" y="178" fill="#94a3b8" font-family="sans-serif" font-size="8">Test strategy</text>
+  <text x="455" y="191" fill="#94a3b8" font-family="sans-serif" font-size="8">Deployment steps</text>
+  <rect x="455" y="200" width="135" height="18" rx="3" fill="#f59e0b" opacity="0.1"/>
+  <text x="465" y="213" fill="#f59e0b" font-family="sans-serif" font-size="8">🔄 Review → Proceed</text>
+  <!-- Arrow -->
+  <line x1="605" y1="175" x2="630" y2="175" stroke="#64748b" stroke-width="2"/>
+  <polygon points="626,170 636,175 626,180" fill="#64748b"/>
+  <!-- Step 4: Fix -->
+  <rect x="640" y="105" width="120" height="140" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+  <rect x="640" y="105" width="120" height="26" rx="10" fill="#8b5cf6" opacity="0.15"/>
+  <rect x="640" y="121" width="120" height="10" fill="#8b5cf6" opacity="0.15"/>
+  <text x="700" y="122" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="9" font-weight="bold">Step 4</text>
+  <text x="655" y="150" fill="#c4b5fd" font-family="sans-serif" font-size="10" font-weight="bold">Apply Fix</text>
+  <text x="655" y="165" fill="#94a3b8" font-family="sans-serif" font-size="8">Code changes</text>
+  <text x="655" y="178" fill="#94a3b8" font-family="sans-serif" font-size="8">Unit tests</text>
+  <text x="655" y="191" fill="#94a3b8" font-family="sans-serif" font-size="8">PR creation</text>
+  <!-- Bottom: AI Model strategy -->
+  <rect x="40" y="265" width="350" height="95" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="288" fill="#c4b5fd" font-family="sans-serif" font-size="11" font-weight="bold">🧠 AI Model Strategy</text>
+  <rect x="55" y="296" width="155" height="20" rx="4" fill="#8b5cf6" opacity="0.1"/>
+  <text x="65" y="310" fill="#c4b5fd" font-family="sans-serif" font-size="8">Gemini 2.5 Pro → Documentation</text>
+  <rect x="220" y="296" width="155" height="20" rx="4" fill="#3b82f6" opacity="0.1"/>
+  <text x="230" y="310" fill="#93c5fd" font-family="sans-serif" font-size="8">SWE-4.5 → Coding Tasks</text>
+  <rect x="55" y="322" width="155" height="20" rx="4" fill="#22c55e" opacity="0.1"/>
+  <text x="65" y="336" fill="#86efac" font-family="sans-serif" font-size="8">Thinking Model → Workflows</text>
+  <rect x="220" y="322" width="155" height="20" rx="4" fill="#f59e0b" opacity="0.1"/>
+  <text x="230" y="336" fill="#fbbf24" font-family="sans-serif" font-size="8">Separate Rules from Workflows</text>
+  <!-- Bottom right: MCP -->
+  <rect x="410" y="265" width="350" height="95" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="430" y="288" fill="#86efac" font-family="sans-serif" font-size="11" font-weight="bold">🔗 MCP Integration</text>
+  <text x="430" y="308" fill="#94a3b8" font-family="sans-serif" font-size="9">Azure DevOps connection for work item tracking</text>
+  <text x="430" y="324" fill="#94a3b8" font-family="sans-serif" font-size="9">Troubleshooting 500 errors and connection issues</text>
+  <rect x="430" y="332" width="310" height="18" rx="3" fill="#ef4444" opacity="0.08"/>
+  <text x="440" y="345" fill="#fca5a5" font-family="sans-serif" font-size="8">⚠️ Key learning: Restart MCP server when connections drop</text>
+  <!-- Title -->
+  <text x="400" y="400" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">Pair Programming — Armando Lopez Jr.</text>
+  <text x="400" y="422" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="13">Bug Investigation • Step-by-Step Workflow • Multi-Model AI Strategy</text>
+  <!-- Date badge -->
+  <rect x="310" y="432" width="180" height="24" rx="12" fill="#8b5cf6" opacity="0.15"/>
+  <text x="400" y="448" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="10">📅 November 11, 2025</text>
+</svg>

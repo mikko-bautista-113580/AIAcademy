@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Glow -->
+  <circle cx="250" cy="200" r="180" fill="#8b5cf6" opacity="0.06"/>
+  <circle cx="600" cy="250" r="160" fill="#06b6d4" opacity="0.06"/>
+  <!-- Left: Business rules code -->
+  <rect x="40" y="60" width="300" height="280" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="40" y="60" width="300" height="32" rx="12" fill="#334155"/>
+  <rect x="40" y="80" width="300" height="12" fill="#334155"/>
+  <circle cx="60" cy="76" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="76" cy="76" r="5" fill="#eab308" opacity="0.8"/>
+  <circle cx="92" cy="76" r="5" fill="#22c55e" opacity="0.8"/>
+  <text x="190" y="80" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="10">UpdateDisplayOrder.cs</text>
+  <!-- Code lines (business rules) -->
+  <text x="55" y="112" fill="#c084fc" font-family="monospace" font-size="9">public async Task</text>
+  <text x="55" y="126" fill="#fbbf24" font-family="monospace" font-size="9">  UpdateDisplayOrder(</text>
+  <text x="55" y="140" fill="#94a3b8" font-family="monospace" font-size="9">    OrderRequest request)</text>
+  <text x="55" y="154" fill="#94a3b8" font-family="monospace" font-size="9">{</text>
+  <text x="55" y="168" fill="#64748b" font-family="monospace" font-size="9">  // Validate input</text>
+  <text x="55" y="182" fill="#c084fc" font-family="monospace" font-size="9">  if</text>
+  <text x="77" y="182" fill="#94a3b8" font-family="monospace" font-size="9"> (!request.IsValid())</text>
+  <text x="55" y="196" fill="#c084fc" font-family="monospace" font-size="9">    throw new</text>
+  <text x="125" y="196" fill="#ef4444" font-family="monospace" font-size="9"> ValidationException</text>
+  <text x="55" y="214" fill="#64748b" font-family="monospace" font-size="9">  // Check permissions</text>
+  <text x="55" y="228" fill="#c084fc" font-family="monospace" font-size="9">  var</text>
+  <text x="80" y="228" fill="#94a3b8" font-family="monospace" font-size="9"> user = GetCurrentUser();</text>
+  <text x="55" y="242" fill="#c084fc" font-family="monospace" font-size="9">  if</text>
+  <text x="77" y="242" fill="#94a3b8" font-family="monospace" font-size="9"> (!user.HasPermission)</text>
+  <text x="55" y="260" fill="#64748b" font-family="monospace" font-size="9">  // Process order update</text>
+  <text x="55" y="274" fill="#c084fc" font-family="monospace" font-size="9">  await</text>
+  <text x="95" y="274" fill="#94a3b8" font-family="monospace" font-size="9"> _repo.Update(request);</text>
+  <text x="55" y="288" fill="#c084fc" font-family="monospace" font-size="9">  return</text>
+  <text x="100" y="288" fill="#22c55e" font-family="monospace" font-size="9"> Success();</text>
+  <text x="55" y="302" fill="#94a3b8" font-family="monospace" font-size="9">}</text>
+  <!-- Label -->
+  <rect x="55" y="312" width="270" height="20" rx="4" fill="#8b5cf6" opacity="0.1"/>
+  <text x="190" y="326" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="9">📄 Complex Business Rules — Hard to Follow</text>
+  <!-- Arrow from code to Cascade -->
+  <line x1="345" y1="200" x2="385" y2="200" stroke="#8b5cf6" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="380,195 392,200 380,205" fill="#8b5cf6" opacity="0.6"/>
+  <!-- Center: Cascade AI -->
+  <rect x="390" y="140" width="80" height="120" rx="10" fill="#8b5cf6" opacity="0.12" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="430" y="175" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="24">🤖</text>
+  <text x="430" y="198" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="9" font-weight="bold">Cascade</text>
+  <text x="430" y="212" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="8">Windsurf</text>
+  <text x="430" y="245" text-anchor="middle" fill="#8b5cf6" font-family="sans-serif" font-size="8">Analyzing...</text>
+  <!-- Arrow from Cascade to diagram -->
+  <line x1="475" y1="200" x2="515" y2="200" stroke="#06b6d4" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="510,195 522,200 510,205" fill="#06b6d4" opacity="0.6"/>
+  <!-- Right: Mermaid diagram output -->
+  <rect x="525" y="55" width="240" height="300" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+  <rect x="525" y="55" width="240" height="32" rx="12" fill="#06b6d4" opacity="0.15"/>
+  <rect x="525" y="75" width="240" height="12" fill="#06b6d4" opacity="0.15"/>
+  <text x="645" y="76" text-anchor="middle" fill="#67e8f9" font-family="sans-serif" font-size="10" font-weight="bold">📊 Mermaid Workflow Diagram</text>
+  <!-- Flowchart nodes -->
+  <!-- Start -->
+  <rect x="600" y="95" width="90" height="28" rx="14" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="645" y="113" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="9" font-weight="bold">Start</text>
+  <line x1="645" y1="123" x2="645" y2="138" stroke="#64748b" stroke-width="1.5"/>
+  <!-- Validate -->
+  <rect x="585" y="138" width="120" height="28" rx="6" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="645" y="156" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="9">Validate Input</text>
+  <line x1="645" y1="166" x2="645" y2="178" stroke="#64748b" stroke-width="1.5"/>
+  <!-- Decision diamond -->
+  <polygon points="645,178 690,198 645,218 600,198" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" stroke-width="1"/>
+  <text x="645" y="202" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-size="8">Valid?</text>
+  <!-- Yes path -->
+  <line x1="645" y1="218" x2="645" y2="233" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="655" y="228" fill="#22c55e" font-family="sans-serif" font-size="7">Yes</text>
+  <!-- No path -->
+  <line x1="690" y1="198" x2="730" y2="198" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="710" y="193" fill="#ef4444" font-family="sans-serif" font-size="7">No</text>
+  <rect x="730" y="188" width="25" height="20" rx="4" fill="#ef4444" opacity="0.2"/>
+  <text x="742" y="202" text-anchor="middle" fill="#ef4444" font-family="sans-serif" font-size="8">❌</text>
+  <!-- Check permissions -->
+  <rect x="585" y="233" width="120" height="28" rx="6" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+  <text x="645" y="251" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="9">Check Permission</text>
+  <line x1="645" y1="261" x2="645" y2="276" stroke="#64748b" stroke-width="1.5"/>
+  <!-- Process -->
+  <rect x="585" y="276" width="120" height="28" rx="6" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" stroke-width="1"/>
+  <text x="645" y="294" text-anchor="middle" fill="#67e8f9" font-family="sans-serif" font-size="9">Update Order</text>
+  <line x1="645" y1="304" x2="645" y2="318" stroke="#64748b" stroke-width="1.5"/>
+  <!-- End -->
+  <rect x="600" y="318" width="90" height="28" rx="14" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="645" y="336" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="9" font-weight="bold">Success ✅</text>
+  <!-- Title -->
+  <text x="400" y="400" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">Mermaid Integration with AI</text>
+  <text x="400" y="422" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="13">Cascade • Business Logic Visualization • Mermaid.js</text>
+  <!-- Tag -->
+  <rect x="40" y="355" width="120" height="28" rx="14" fill="#8b5cf6" opacity="0.2"/>
+  <text x="100" y="374" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="12" font-weight="bold">📊 Diagrams</text>
+</svg>

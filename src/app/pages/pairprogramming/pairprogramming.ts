@@ -9,6 +9,7 @@ interface Recording {
   date: string;
   filename: string;
   embedUrl?: string;
+  thumbnail?: string;
   description: string;
   gradient: string;
   icon: string;
@@ -34,6 +35,7 @@ export class PairProgramming {
       id: 'mark-echon',
       title: 'AI SDLC - Pair Programming',
       presenter: 'Mark Echon',
+      thumbnail: 'demos/pp-mark-echon.svg',
       date: 'November 12, 2025',
       filename: '',
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/11.12.25%20-%20AI%20SDLC%20-%20Pair%20Programming%20-%20(Mark%20Echon).mp4?csf=1&web=1&e=ymbYbx',
@@ -46,6 +48,7 @@ export class PairProgramming {
       id: 'armando-lopez',
       title: 'AI SDLC - Pair Programming',
       presenter: 'Armando Lopez Jr.',
+      thumbnail: 'demos/pp-armando-lopez.svg',
       date: 'November 11, 2025',
       filename: '',
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/11.11.25%20-%20AI%20SDLC%20-%20Pair%20Programming%20-%20(Armando%20Lopez%20Jr.).mp4?csf=1&web=1&e=ymbYbx',
@@ -58,6 +61,7 @@ export class PairProgramming {
       id: 'alberto-terol',
       title: 'AI SDLC - Pair Programming',
       presenter: 'Alberto Terol',
+      thumbnail: 'demos/pp-alberto-terol.svg',
       date: 'November 10, 2025',
       filename: '',
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/11.10.25%20-%20AI%20SDLC%20-%20Pair%20Programming%20%20-%20(Alberto%20Terol).mp4?csf=1&web=1&e=6b7buN',

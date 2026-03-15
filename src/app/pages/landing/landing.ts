@@ -47,6 +47,7 @@ interface DemoVideo {
   description: string;
   src: string;
   embedUrl?: string;
+  thumbnail?: string;
   icon: string;
   tag: string;
   tagClass: string;
@@ -296,7 +297,8 @@ export class Landing implements OnInit, OnDestroy {
     {
       id: 'api-endpoint',
       title: 'API Endpoint Generator',
-      description: 'Watch how Windsurf AI generates production-ready API endpoints in minutes, automating boilerplate code and best practices.',
+      thumbnail: 'demos/api-endpoint.svg',
+      description: 'Shows how a Windsurf workflow (instruction set) automates the full generation of a gateway GET API endpoint. Using MCP to connect to Azure DevOps, the AI pulls the user story and test cases, then step-by-step generates the public contract, query, input/output DTOs, controller, integration test cases, and unit tests — all following team standards. Developer only needs to review the output before merging.',
       src: '',
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/API%20Endpoint%20Generator%20Using%20Windsurf.mp4?csf=1&web=1&e=3aYmDK',
       icon: '🚀',
@@ -307,7 +309,8 @@ export class Landing implements OnInit, OnDestroy {
     {
       id: 'api-user-stories',
       title: 'Creating API User Stories',
-      description: 'See how Windsurf streamlines the creation of comprehensive API user stories with acceptance criteria and technical specs.',
+      thumbnail: 'demos/api-user-stories.svg',
+      description: 'Before Windsurf, manually creating a set of API user stories took 10–15 minutes with frequent inconsistencies. Now it takes 3–5 minutes. Demo walks through the Windsurf workflow: provide a table of fields, the AI selects the right template (gateway GET, upsert, POST/PUT, etc.), generates the parent user story, then presents each child user story draft — description, acceptance criteria, and technical requirements — for confirmation before auto-creating them in the Azure DevOps backlog via MCP.',
       src: '',
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/CreatingAPI%20User%20Stories%20Efficiently%20with%20Windsurf.mp4?csf=1&web=1&e=dEp2JK',
       icon: '📋',
@@ -318,7 +321,8 @@ export class Landing implements OnInit, OnDestroy {
     {
       id: 'user-story-copilot',
       title: 'User Stories with CoPilot',
-      description: 'Leverage GitHub CoPilot to rapidly draft and refine user stories with AI-assisted content generation.',
+      thumbnail: 'demos/user-story-copilot.svg',
+      description: 'Full walkthrough of automating user story creation using GitHub Copilot with an MCP server connected to Azure DevOps. Covers MCP server setup (az login, installing extensions, configuring mcp.json with the organization), creating markdown instruction files for each story type (gateway GET/POST/PUT, MS GET/PUT), and the end-to-end flow: Copilot reads instructions, creates a parent feature linked to the epic, presents child story drafts one-by-one, and pushes them to the backlog after confirmation.',
       src: '',
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/CreatingUserStoryUsingCoPilot.mp4?csf=1&web=1&e=vCEDH4',
       icon: '🤖',
@@ -329,7 +333,8 @@ export class Landing implements OnInit, OnDestroy {
     {
       id: 'mermaid-ai',
       title: 'Mermaid Integration with AI',
-      description: 'Automatically generate visual diagrams and flowcharts from code and requirements using AI-powered Mermaid integration.',
+      thumbnail: 'demos/mermaid-ai.svg',
+      description: 'Demonstrates integrating Mermaid.js with Windsurf (Cascade) to quickly visualize complex business logic. Paste existing endpoint business rules into Cascade and ask it to generate a Mermaid workflow diagram. Cascade analyzes the content and produces an HTML file with the diagram — making it much easier to understand intricate business rules and data flow without manually drawing diagrams.',
       src: '',
       embedUrl: 'https://nelnet.sharepoint.com/:v:/r/teams/NPIExternalAPI/Shared%20Documents/General/External%20API/Mikko/Recording/Mermaid%20integration%20with%20AI.mp4?csf=1&web=1&e=TnBhCs',
       icon: '📊',

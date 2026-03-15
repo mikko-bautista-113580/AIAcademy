@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Glow -->
+  <circle cx="400" cy="200" r="200" fill="#22c55e" opacity="0.05"/>
+  <circle cx="650" cy="100" r="120" fill="#8b5cf6" opacity="0.06"/>
+  <!-- Left: VS Code + Copilot chat -->
+  <rect x="40" y="60" width="330" height="290" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <!-- VS Code title bar -->
+  <rect x="40" y="60" width="330" height="32" rx="12" fill="#334155"/>
+  <rect x="40" y="80" width="330" height="12" fill="#334155"/>
+  <circle cx="60" cy="76" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="76" cy="76" r="5" fill="#eab308" opacity="0.8"/>
+  <circle cx="92" cy="76" r="5" fill="#22c55e" opacity="0.8"/>
+  <text x="205" y="80" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="10">Visual Studio Code — Copilot Chat</text>
+  <!-- Copilot icon -->
+  <rect x="55" y="102" width="300" height="32" rx="6" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="1"/>
+  <text x="65" y="122" fill="#86efac" font-family="sans-serif" font-size="11" font-weight="bold">🤖 GitHub Copilot</text>
+  <text x="215" y="122" fill="#64748b" font-family="sans-serif" font-size="10">MCP Connected</text>
+  <circle cx="340" cy="118" r="5" fill="#22c55e" opacity="0.8"/>
+  <!-- Chat messages -->
+  <!-- User message -->
+  <rect x="130" y="145" width="215" height="35" rx="8" fill="#3b82f6" opacity="0.15"/>
+  <text x="140" y="160" fill="#93c5fd" font-family="sans-serif" font-size="9">Create user story for this model</text>
+  <text x="140" y="173" fill="#64748b" font-family="sans-serif" font-size="8">@github-folder + table details</text>
+  <!-- Copilot response -->
+  <rect x="55" y="190" width="240" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="65" y="206" fill="#86efac" font-family="sans-serif" font-size="9" font-weight="bold">Copilot:</text>
+  <text x="65" y="220" fill="#94a3b8" font-family="sans-serif" font-size="9">Reading instructions... Determining</text>
+  <text x="65" y="233" fill="#94a3b8" font-family="sans-serif" font-size="9">request type: MS GET, Gateway GET</text>
+  <!-- User reply -->
+  <rect x="190" y="255" width="155" height="25" rx="8" fill="#3b82f6" opacity="0.15"/>
+  <text x="200" y="272" fill="#93c5fd" font-family="sans-serif" font-size="9">Proceed ✅</text>
+  <!-- Copilot action -->
+  <rect x="55" y="290" width="240" height="45" rx="8" fill="#22c55e" opacity="0.08" stroke="#22c55e" stroke-width="1"/>
+  <text x="65" y="306" fill="#86efac" font-family="sans-serif" font-size="9" font-weight="bold">✨ Creating work items via MCP...</text>
+  <text x="65" y="320" fill="#64748b" font-family="sans-serif" font-size="9">→ Parent feature linked to Epic #185871</text>
+  <!-- Right: MCP Server + Azure DevOps flow -->
+  <!-- MCP Server setup -->
+  <rect x="420" y="60" width="340" height="120" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="440" y="85" fill="#c4b5fd" font-family="sans-serif" font-size="12" font-weight="bold">🔧 MCP Server Setup</text>
+  <rect x="435" y="95" width="310" height="20" rx="4" fill="#0f172a"/>
+  <text x="445" y="109" fill="#22c55e" font-family="monospace" font-size="9">$ az login</text>
+  <rect x="435" y="120" width="310" height="20" rx="4" fill="#0f172a"/>
+  <text x="445" y="134" fill="#94a3b8" font-family="monospace" font-size="9">mcp.json → org: "nelweb"</text>
+  <rect x="435" y="145" width="310" height="24" rx="4" fill="#22c55e" opacity="0.1"/>
+  <text x="445" y="161" fill="#86efac" font-family="monospace" font-size="9">✓ Server running • Extensions installed</text>
+  <!-- MD Instructions -->
+  <rect x="420" y="195" width="160" height="155" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="500" y="218" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="bold">📝 MD Templates</text>
+  <rect x="435" y="228" width="130" height="20" rx="4" fill="#0f172a"/>
+  <text x="445" y="242" fill="#94a3b8" font-family="monospace" font-size="8">gateway-get.md</text>
+  <rect x="435" y="253" width="130" height="20" rx="4" fill="#0f172a"/>
+  <text x="445" y="267" fill="#94a3b8" font-family="monospace" font-size="8">gateway-post.md</text>
+  <rect x="435" y="278" width="130" height="20" rx="4" fill="#0f172a"/>
+  <text x="445" y="292" fill="#94a3b8" font-family="monospace" font-size="8">ms-get.md</text>
+  <rect x="435" y="303" width="130" height="20" rx="4" fill="#0f172a"/>
+  <text x="445" y="317" fill="#94a3b8" font-family="monospace" font-size="8">ms-put.md</text>
+  <text x="500" y="342" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="8">Separated for clarity</text>
+  <!-- Azure DevOps Result -->
+  <rect x="600" y="195" width="160" height="155" rx="12" fill="#3b82f6" opacity="0.08" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="680" y="218" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="11" font-weight="bold">☁️ Azure DevOps</text>
+  <rect x="615" y="228" width="130" height="22" rx="4" fill="#0f172a" stroke="#22c55e" stroke-width="1"/>
+  <text x="625" y="243" fill="#86efac" font-family="sans-serif" font-size="8">✅ MS GET Story</text>
+  <rect x="615" y="256" width="130" height="22" rx="4" fill="#0f172a" stroke="#22c55e" stroke-width="1"/>
+  <text x="625" y="271" fill="#86efac" font-family="sans-serif" font-size="8">✅ Gateway GET Story</text>
+  <rect x="615" y="284" width="130" height="22" rx="4" fill="#0f172a" stroke="#22c55e" stroke-width="1"/>
+  <text x="625" y="299" fill="#86efac" font-family="sans-serif" font-size="8">✅ MS PUT Story</text>
+  <rect x="615" y="312" width="130" height="22" rx="4" fill="#0f172a" stroke="#22c55e" stroke-width="1"/>
+  <text x="625" y="327" fill="#86efac" font-family="sans-serif" font-size="8">✅ Gateway PUT Story</text>
+  <!-- Arrow between templates and ADO -->
+  <line x1="580" y1="270" x2="610" y2="270" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+  <polygon points="607,265 617,270 607,275" fill="#3b82f6" opacity="0.5"/>
+  <!-- Title -->
+  <text x="400" y="400" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">User Stories with GitHub Copilot</text>
+  <text x="400" y="422" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="13">MCP Server • MD Instructions • Automated Backlog Creation</text>
+  <!-- Tag -->
+  <rect x="660" y="395" width="110" height="28" rx="14" fill="#22c55e" opacity="0.2"/>
+  <text x="715" y="414" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="12" font-weight="bold">🤖 CoPilot</text>
+</svg>

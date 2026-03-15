@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="code-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Subtle grid pattern -->
+  <g opacity="0.05">
+    <line x1="0" y1="50" x2="800" y2="50" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="100" x2="800" y2="100" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="150" x2="800" y2="150" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="200" x2="800" y2="200" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="250" x2="800" y2="250" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="300" x2="800" y2="300" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="350" x2="800" y2="350" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="400" x2="800" y2="400" stroke="white" stroke-width="1"/>
+  </g>
+  <!-- Glow circles -->
+  <circle cx="650" cy="100" r="150" fill="#3b82f6" opacity="0.08"/>
+  <circle cx="150" cy="350" r="120" fill="#8b5cf6" opacity="0.06"/>
+  <!-- Code editor mockup -->
+  <rect x="60" y="80" width="340" height="290" rx="12" fill="url(#code-bg)" stroke="#334155" stroke-width="1.5"/>
+  <!-- Editor title bar -->
+  <rect x="60" y="80" width="340" height="35" rx="12" fill="#1e293b"/>
+  <rect x="60" y="103" width="340" height="12" fill="#1e293b"/>
+  <circle cx="82" cy="98" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="98" cy="98" r="5" fill="#eab308" opacity="0.8"/>
+  <circle cx="114" cy="98" r="5" fill="#22c55e" opacity="0.8"/>
+  <text x="230" y="102" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="11">controller.cs</text>
+  <!-- Code lines -->
+  <text x="78" y="140" fill="#64748b" font-family="monospace" font-size="11">1</text>
+  <text x="100" y="140" fill="#c084fc" font-family="monospace" font-size="11">[HttpGet]</text>
+  <text x="78" y="160" fill="#64748b" font-family="monospace" font-size="11">2</text>
+  <text x="100" y="160" fill="#93c5fd" font-family="monospace" font-size="11">public async Task&lt;IActionResult&gt;</text>
+  <text x="78" y="180" fill="#64748b" font-family="monospace" font-size="11">3</text>
+  <text x="100" y="180" fill="#fbbf24" font-family="monospace" font-size="11">  GetTrackingData</text>
+  <text x="245" y="180" fill="#94a3b8" font-family="monospace" font-size="11">(</text>
+  <text x="78" y="200" fill="#64748b" font-family="monospace" font-size="11">4</text>
+  <text x="100" y="200" fill="#94a3b8" font-family="monospace" font-size="11">    [FromQuery] </text>
+  <text x="210" y="200" fill="#67e8f9" font-family="monospace" font-size="11">InputDto</text>
+  <text x="275" y="200" fill="#94a3b8" font-family="monospace" font-size="11"> input)</text>
+  <text x="78" y="220" fill="#64748b" font-family="monospace" font-size="11">5</text>
+  <text x="100" y="220" fill="#94a3b8" font-family="monospace" font-size="11">{</text>
+  <text x="78" y="240" fill="#64748b" font-family="monospace" font-size="11">6</text>
+  <text x="100" y="240" fill="#c084fc" font-family="monospace" font-size="11">  var</text>
+  <text x="135" y="240" fill="#94a3b8" font-family="monospace" font-size="11"> result = </text>
+  <text x="215" y="240" fill="#c084fc" font-family="monospace" font-size="11">await</text>
+  <text x="78" y="260" fill="#64748b" font-family="monospace" font-size="11">7</text>
+  <text x="100" y="260" fill="#94a3b8" font-family="monospace" font-size="11">    _query.</text>
+  <text x="170" y="260" fill="#fbbf24" font-family="monospace" font-size="11">Execute</text>
+  <text x="225" y="260" fill="#94a3b8" font-family="monospace" font-size="11">(input);</text>
+  <text x="78" y="280" fill="#64748b" font-family="monospace" font-size="11">8</text>
+  <text x="100" y="280" fill="#c084fc" font-family="monospace" font-size="11">  return</text>
+  <text x="160" y="280" fill="#22c55e" font-family="monospace" font-size="11"> Ok</text>
+  <text x="178" y="280" fill="#94a3b8" font-family="monospace" font-size="11">(result);</text>
+  <text x="78" y="300" fill="#64748b" font-family="monospace" font-size="11">9</text>
+  <text x="100" y="300" fill="#94a3b8" font-family="monospace" font-size="11">}</text>
+  <!-- AI sparkle indicator -->
+  <rect x="78" y="310" width="300" height="24" rx="4" fill="#3b82f6" opacity="0.1"/>
+  <text x="88" y="326" fill="#3b82f6" font-family="sans-serif" font-size="10" font-weight="bold">✨ AI Generated • 9 test cases covered</text>
+  <!-- Flow diagram on right -->
+  <!-- User Story box -->
+  <rect x="460" y="90" width="140" height="45" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="530" y="110" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="11" font-weight="bold">📋 User Story</text>
+  <text x="530" y="125" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="9">ADO Work Item</text>
+  <!-- Arrow down -->
+  <line x1="530" y1="135" x2="530" y2="160" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+  <polygon points="525,155 535,155 530,165" fill="#3b82f6" opacity="0.5"/>
+  <!-- MCP box -->
+  <rect x="460" y="165" width="140" height="45" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="530" y="185" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="11" font-weight="bold">🔗 MCP Server</text>
+  <text x="530" y="200" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="9">Azure DevOps</text>
+  <!-- Arrow down -->
+  <line x1="530" y1="210" x2="530" y2="235" stroke="#8b5cf6" stroke-width="2" opacity="0.5"/>
+  <polygon points="525,230 535,230 530,240" fill="#8b5cf6" opacity="0.5"/>
+  <!-- Windsurf AI box -->
+  <rect x="460" y="240" width="140" height="45" rx="8" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="530" y="260" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="11" font-weight="bold">🤖 Windsurf AI</text>
+  <text x="530" y="275" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="9">Code Generation</text>
+  <!-- Arrow down -->
+  <line x1="530" y1="285" x2="530" y2="310" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+  <polygon points="525,305 535,305 530,315" fill="#22c55e" opacity="0.5"/>
+  <!-- Generated files -->
+  <rect x="440" y="315" width="180" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="530" y="335" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">📄 Controller  📄 DTO</text>
+  <text x="530" y="350" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">📄 Query  📄 Unit Tests</text>
+  <text x="530" y="362" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">📄 Integration Tests</text>
+  <!-- Connection line from flow to code -->
+  <line x1="440" y1="262" x2="410" y2="220" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.3"/>
+  <!-- Title text -->
+  <text x="400" y="420" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">API Endpoint Generator</text>
+  <text x="400" y="442" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="13">Windsurf Workflow • Automated Code Generation</text>
+  <!-- Tag -->
+  <rect x="630" y="85" width="110" height="28" rx="14" fill="#3b82f6" opacity="0.2"/>
+  <text x="685" y="104" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="12" font-weight="bold">🚀 Windsurf</text>
+</svg>
