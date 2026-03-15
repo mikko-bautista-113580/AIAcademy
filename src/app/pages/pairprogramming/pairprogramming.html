@@ -23,59 +23,6 @@
   </div>
 </section>
 
-<!-- Video Player Overlay -->
-@if (activeRecording()) {
-  <div class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 video-overlay-enter">
-    <div class="absolute inset-0 bg-black/90 backdrop-blur-md" (click)="closePlayer()"></div>
-    <div class="relative w-full max-w-5xl bg-dark-light rounded-3xl overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/50 video-modal-enter">
-      <!-- Player Header -->
-      <div class="flex items-center justify-between px-6 py-4 border-b border-white/[0.06] bg-white/[0.02]">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
-            <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-white font-semibold text-sm">{{ activeRecording()!.title }}</h3>
-            <p class="text-slate-500 text-xs">{{ activeRecording()!.presenter }} &middot; {{ activeRecording()!.date }}</p>
-          </div>
-        </div>
-        <button (click)="closePlayer()"
-                class="p-2.5 rounded-xl bg-white/5 hover:bg-red-500/15 text-slate-500 hover:text-red-400 transition-all duration-200 border border-white/[0.06] hover:border-red-500/20"
-                title="Close (Esc)">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-      <!-- Video -->
-      <div class="aspect-video bg-black">
-        @if (activeRecording()!.embedUrl) {
-          <a [href]="activeRecording()!.embedUrl" target="_blank" rel="noopener noreferrer"
-             class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-dark-light to-dark group/play cursor-pointer relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 group-hover/play:opacity-100 transition-opacity duration-500"></div>
-            <div class="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-4 group-hover/play:scale-110 group-hover/play:bg-primary/20 transition-all duration-300">
-              <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-            <span class="text-white font-semibold text-sm mb-1">{{ activeRecording()!.title }}</span>
-            <span class="text-slate-400 text-xs flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              Opens in SharePoint
-            </span>
-          </a>
-        } @else {
-          <video class="w-full h-full" controls autoplay [src]="activeRecording()!.filename">
-            Your browser does not support the video tag.
-          </video>
-        }
-      </div>
-    </div>
-  </div>
-}
-
 <!-- Recordings Grid -->
 <section class="py-20 bg-dark relative overflow-hidden">
   <!-- Subtle ambient -->
@@ -95,7 +42,7 @@
       @for (rec of filteredRecordings(); track rec.id; let i = $index) {
         <div class="group relative rounded-2xl overflow-hidden bg-white/[0.03] border border-white/[0.06] hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-500 card-hover">
           <!-- Thumbnail -->
-          <div class="relative aspect-video cursor-pointer overflow-hidden" (click)="playRecording(rec)">
+          <a [href]="rec.embedUrl || rec.filename" target="_blank" rel="noopener noreferrer" class="block relative aspect-video cursor-pointer overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br"
                  [class.from-primary]="i === 0" [class.to-violet-600]="i === 0"
                  [class.from-violet-500]="i === 1" [class.to-fuchsia-600]="i === 1"
@@ -118,7 +65,7 @@
               <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
               Recording
             </div>
-          </div>
+          </a>
 
           <!-- Content -->
           <div class="p-5">
@@ -133,7 +80,7 @@
                 <span class="text-sm font-medium text-slate-300">{{ rec.presenter }}</span>
               </div>
             </div>
-            <p class="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-2">{{ rec.description }}</p>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">{{ rec.description }}</p>
 
             <!-- Meta row -->
             <div class="flex items-center gap-1.5 text-xs text-slate-600 mb-5">
@@ -145,13 +92,13 @@
 
             <!-- Actions -->
             <div class="flex items-center gap-2">
-              <button (click)="playRecording(rec)"
-                      class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/15 hover:bg-primary/25 text-primary-light text-sm font-semibold rounded-xl transition-all duration-300 border border-primary/20 hover:border-primary/40">
+              <a [href]="rec.embedUrl || rec.filename" target="_blank" rel="noopener noreferrer"
+                 class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/15 hover:bg-primary/25 text-primary-light text-sm font-semibold rounded-xl transition-all duration-300 border border-primary/20 hover:border-primary/40">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
                 Watch
-              </button>
+              </a>
               <a [href]="rec.filename" [download]="rec.filename"
                  class="inline-flex items-center justify-center p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-500 hover:text-slate-300 transition-all duration-300 border border-white/[0.06] hover:border-white/[0.12]"
                  title="Download">
