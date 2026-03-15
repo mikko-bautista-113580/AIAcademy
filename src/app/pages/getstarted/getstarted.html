@@ -26,7 +26,7 @@
 
     <!-- Why Learn AI - Reasons Grid -->
     <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-16 sm:mb-20">
-      @for (reason of reasons; track reason.title; let i = $index) {
+      @for (reason of reasons(); track reason.title; let i = $index) {
         <div class="animate-fade-in-up"
              [class.animate-delay-100]="i === 0"
              [class.animate-delay-200]="i === 1"

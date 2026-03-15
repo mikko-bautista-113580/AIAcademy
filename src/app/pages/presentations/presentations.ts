@@ -1,5 +1,6 @@
-import { Component, signal, computed, HostListener } from '@angular/core';
+import { Component, signal, computed, HostListener, inject } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { RoleService, Role } from '../../services/role.service';
 
 interface Presentation {
   id: string;
@@ -15,6 +16,7 @@ interface Presentation {
   tags: string[];
   workflowCreator: string;
   category: string;
+  roles: Role[];
 }
 
 @Component({
@@ -24,6 +26,10 @@ interface Presentation {
   styleUrl: './presentations.scss',
 })
 export class Presentations {
+  private roleService = inject(RoleService);
+
+  activeRole = this.roleService.selectedRole;
+
   presentations: Presentation[] = [
     {
       id: 'nov23',
@@ -39,6 +45,7 @@ export class Presentations {
       tags: ['GPT-4', 'Claude', 'Gemini', 'Benchmarks'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'AI Models & Selection',
+      roles: ['QA', 'BA', 'Developer', 'Technical Lead', 'Management'],
     },
     {
       id: 'sep16',
@@ -54,6 +61,7 @@ export class Presentations {
       tags: ['Historical', 'AI Evolution', 'Comparison'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'AI Models & Selection',
+      roles: ['QA', 'BA', 'Developer', 'Technical Lead', 'Management'],
     },
     {
       id: 'workflow-creator',
@@ -69,6 +77,7 @@ export class Presentations {
       tags: ['Workflow', 'Automation', 'AI Agents', 'Productivity'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'Productivity & Workflows',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'estimated-time',
@@ -84,6 +93,7 @@ export class Presentations {
       tags: ['Time Estimation', 'Productivity', 'Metrics', 'Benchmarks'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'Productivity & Workflows',
+      roles: ['BA', 'Technical Lead', 'Management'],
     },
     {
       id: 'model-to-use',
@@ -99,6 +109,7 @@ export class Presentations {
       tags: ['Model Selection', 'GPT-4', 'Claude', 'Decision Framework'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'AI Models & Selection',
+      roles: ['QA', 'BA', 'Developer', 'Technical Lead', 'Management'],
     },
     {
       id: 'pr-roadmap',
@@ -114,6 +125,7 @@ export class Presentations {
       tags: ['Pull Requests', 'Code Review', 'CI/CD', 'Git'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'DevOps & CI/CD',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'test-case-association',
@@ -129,6 +141,7 @@ export class Presentations {
       tags: ['Azure DevOps', 'Test Cases', 'Automation', 'Traceability'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'DevOps & CI/CD',
+      roles: ['QA', 'BA', 'Technical Lead'],
     },
     {
       id: 'gw-endpoint-generator',
@@ -144,6 +157,7 @@ export class Presentations {
       tags: ['API Gateway', 'Code Generation', 'Automation', 'Endpoints'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'Code Generation',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'microservice-endpoint-generator',
@@ -159,6 +173,7 @@ export class Presentations {
       tags: ['Microservices', 'Code Generation', 'Automation', 'API'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'Code Generation',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'github-pr-reviewer',
@@ -174,6 +189,7 @@ export class Presentations {
       tags: ['GitHub', 'Pull Requests', 'Code Review', 'AI Automation'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'DevOps & CI/CD',
+      roles: ['Developer', 'Technical Lead'],
     },
     {
       id: 'requirements-to-test-case',
@@ -189,6 +205,7 @@ export class Presentations {
       tags: ['Test Cases', 'Requirements', 'QA', 'AI Generation'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'DevOps & CI/CD',
+      roles: ['QA', 'BA'],
     },
     {
       id: 'test-suite-creator',
@@ -204,6 +221,7 @@ export class Presentations {
       tags: ['Test Suites', 'QA', 'Automation', 'AI Testing'],
       workflowCreator: 'Cascade (Windsurf IDE)',
       category: 'DevOps & CI/CD',
+      roles: ['QA', 'Technical Lead'],
     }
   ];
 
@@ -218,13 +236,22 @@ export class Presentations {
   };
 
   getCategoryCount(category: string): number {
-    return this.presentations.filter(p => p.category === category).length;
+    const role = this.activeRole();
+    return this.presentations.filter(p => p.category === category && (!role || p.roles.includes(role))).length;
   }
+
+  totalForRole = computed(() => {
+    const role = this.activeRole();
+    return this.presentations.filter(p => !role || p.roles.includes(role)).length;
+  });
 
   filteredPresentations = computed(() => {
     const cat = this.activeCategory();
-    if (!cat) return this.presentations;
-    return this.presentations.filter(p => p.category === cat);
+    const role = this.activeRole();
+    return this.presentations.filter(p =>
+      (!role || p.roles.includes(role)) &&
+      (!cat || p.category === cat)
+    );
   });
 
   expandedDescription = signal<Presentation | null>(null);

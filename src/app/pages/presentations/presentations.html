@@ -8,6 +8,14 @@
     <span class="text-primary font-semibold text-sm uppercase tracking-wider">Knowledge Base</span>
     <h1 class="text-4xl sm:text-5xl font-bold text-white mt-3 mb-4">Presentations</h1>
     <p class="text-slate-400 max-w-2xl mx-auto text-lg">Explore our curated AI research presentations comparing models, benchmarks, and industry trends.</p>
+    @if (activeRole()) {
+      <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+        </svg>
+        Showing presentations for <strong>{{ activeRole() }}</strong> &nbsp;·&nbsp; {{ filteredPresentations().length }} available
+      </div>
+    }
   </div>
 </section>
 
@@ -183,7 +191,7 @@
               [class.bg-white/20]="activeCategory() === null"
               [class.text-white]="activeCategory() === null"
               [class.bg-slate-200]="activeCategory() !== null"
-              [class.text-slate-500]="activeCategory() !== null">{{ presentations.length }}</span>
+              [class.text-slate-500]="activeCategory() !== null">{{ totalForRole() }}</span>
       </button>
       @for (cat of categories; track cat) {
         <button (click)="setCategory(cat)"
