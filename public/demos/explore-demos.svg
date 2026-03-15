@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Subtle pattern -->
+  <circle cx="650" cy="80" r="180" fill="white" opacity="0.05"/>
+  <circle cx="150" cy="320" r="140" fill="white" opacity="0.04"/>
+  <!-- Video thumbnails grid -->
+  <!-- Video 1: API Endpoint -->
+  <rect x="60" y="50" width="300" height="160" rx="12" fill="white" opacity="0.1" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+  <rect x="75" y="65" width="120" height="68" rx="6" fill="white" opacity="0.08"/>
+  <circle cx="135" cy="99" r="14" fill="white" opacity="0.15"/>
+  <polygon points="130,92 130,106 142,99" fill="white" opacity="0.6"/>
+  <text x="210" y="85" fill="white" font-family="sans-serif" font-size="11" font-weight="bold">API Endpoint Generator</text>
+  <text x="210" y="100" fill="white" opacity="0.6" font-family="sans-serif" font-size="9">Windsurf • Auto Code Gen</text>
+  <rect x="210" y="108" width="55" height="16" rx="8" fill="white" opacity="0.15"/>
+  <text x="218" y="120" fill="white" opacity="0.8" font-family="sans-serif" font-size="8" font-weight="bold">🚀 Windsurf</text>
+  <!-- Video 2: User Stories -->
+  <rect x="75" y="145" width="120" height="50" rx="6" fill="white" opacity="0.06"/>
+  <circle cx="135" cy="170" r="10" fill="white" opacity="0.12"/>
+  <polygon points="131,164 131,176 141,170" fill="white" opacity="0.5"/>
+  <text x="210" y="160" fill="white" opacity="0.8" font-family="sans-serif" font-size="10">Creating API User Stories</text>
+  <text x="210" y="175" fill="white" opacity="0.5" font-family="sans-serif" font-size="8">Template-Based Generation</text>
+  <!-- Video 2: Mermaid -->
+  <rect x="440" y="50" width="300" height="160" rx="12" fill="white" opacity="0.1" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+  <rect x="455" y="65" width="120" height="68" rx="6" fill="white" opacity="0.08"/>
+  <!-- Mini flowchart inside -->
+  <rect x="475" y="75" width="40" height="14" rx="3" fill="white" opacity="0.2"/>
+  <line x1="495" y1="89" x2="495" y2="97" stroke="white" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="475" y="97" width="40" height="14" rx="3" fill="white" opacity="0.15"/>
+  <line x1="495" y1="111" x2="495" y2="119" stroke="white" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="475" y="119" width="40" height="14" rx="3" fill="white" opacity="0.1"/>
+  <text x="590" y="85" fill="white" font-family="sans-serif" font-size="11" font-weight="bold">Mermaid + AI</text>
+  <text x="590" y="100" fill="white" opacity="0.6" font-family="sans-serif" font-size="9">Diagram Generation</text>
+  <rect x="590" y="108" width="55" height="16" rx="8" fill="white" opacity="0.15"/>
+  <text x="598" y="120" fill="white" opacity="0.8" font-family="sans-serif" font-size="8" font-weight="bold">📊 Diagrams</text>
+  <!-- Video 4: CoPilot -->
+  <rect x="455" y="145" width="120" height="50" rx="6" fill="white" opacity="0.06"/>
+  <circle cx="515" cy="170" r="10" fill="white" opacity="0.12"/>
+  <polygon points="511,164 511,176 521,170" fill="white" opacity="0.5"/>
+  <text x="590" y="160" fill="white" opacity="0.8" font-family="sans-serif" font-size="10">User Stories + CoPilot</text>
+  <text x="590" y="175" fill="white" opacity="0.5" font-family="sans-serif" font-size="8">MCP • Automated Backlog</text>
+  <!-- Big play button center -->
+  <circle cx="400" cy="240" r="35" fill="white" opacity="0.15"/>
+  <circle cx="400" cy="240" r="28" fill="white" opacity="0.1"/>
+  <polygon points="390,225 390,255 415,240" fill="white" opacity="0.7"/>
+  <!-- Title -->
+  <text x="400" y="310" text-anchor="middle" fill="white" font-family="sans-serif" font-size="24" font-weight="bold">AI Demos</text>
+  <text x="400" y="335" text-anchor="middle" fill="white" opacity="0.7" font-family="sans-serif" font-size="13">Real-world AI tool demonstrations in action</text>
+  <!-- Badge -->
+  <rect x="340" y="350" width="120" height="26" rx="13" fill="white" opacity="0.15"/>
+  <text x="400" y="368" text-anchor="middle" fill="white" opacity="0.9" font-family="sans-serif" font-size="11" font-weight="bold">▶ Watch Now</text>
+</svg>
