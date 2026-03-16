@@ -14,6 +14,7 @@ interface Recording {
   gradient: string;
   icon: string;
   roles: Role[];
+  hidden?: boolean;
 }
 
 @Component({
@@ -46,6 +47,7 @@ export class PairProgramming {
     },
     {
       id: 'armando-lopez',
+      hidden: true,
       title: 'AI SDLC - Pair Programming',
       presenter: 'Armando Lopez Jr.',
       thumbnail: 'demos/pp-armando-lopez.svg',
@@ -74,8 +76,8 @@ export class PairProgramming {
 
   filteredRecordings = computed(() => {
     const role = this.roleService.selectedRole();
-    if (!role) return this.recordings;
-    return this.recordings.filter(r => r.roles.includes(role));
+    if (!role) return this.recordings.filter(r => !r.hidden);
+    return this.recordings.filter(r => !r.hidden && r.roles.includes(role));
   });
 
   activeRecording = signal<Recording | null>(null);

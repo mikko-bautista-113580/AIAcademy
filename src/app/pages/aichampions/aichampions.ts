@@ -42,5 +42,13 @@ export class AIChampions {
       quote: 'I am a developer who sees AI as a learning accelerator and force multiplier. I am driven by growth — exploring new problems, building tools, and sharing solutions. It lets me move faster through the exploration phase while staying sharp on the implementation, so I can tackle challenges efficiently and turn them into reusable tools for my team. AI helps on amplifying my ability to learn, build and scale.',
       gradient: 'from-emerald-500 to-emerald-700',
     },
+    {
+      id: 'anjo-tadena',
+      name: 'Anjo Tadena',
+      role: 'Senior Software Engineer',
+      photo: 'AIChampions/AnjoTadena.jpg',
+      quote: 'AI has become my 24/7 pair programmer. It helps me explore ideas, enhance and validate code, and continuously learn while implementing scalable solutions. By combining AI tools with my experience, I can experiment, solve problems, and deliver value to the team—without compromising my daily tasks—while also helping teammates resolve challenges more efficiently.',
+      gradient: 'from-amber-500 to-orange-600',
+    },
   ];
 }

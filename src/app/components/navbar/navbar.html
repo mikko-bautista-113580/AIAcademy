@@ -32,51 +32,115 @@
            [class.hover:bg-white/10]="!isScrolled()">
           Home
         </a>
-        <a routerLink="/pair-programming"
-           routerLinkActive="nav-active"
-           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-           [class.text-slate-700]="isScrolled()"
-           [class.text-white]="!isScrolled()"
-           [class.hover:bg-slate-100]="isScrolled()"
-           [class.hover:bg-white/10]="!isScrolled()">
-          Pair Programming
-        </a>
-        <a routerLink="/presentations"
-           routerLinkActive="nav-active"
-           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-           [class.text-slate-700]="isScrolled()"
-           [class.text-white]="!isScrolled()"
-           [class.hover:bg-slate-100]="isScrolled()"
-           [class.hover:bg-white/10]="!isScrolled()">
-          Presentations
-        </a>
-        <a routerLink="/about"
-           routerLinkActive="nav-active"
-           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-           [class.text-slate-700]="isScrolled()"
-           [class.text-white]="!isScrolled()"
-           [class.hover:bg-slate-100]="isScrolled()"
-           [class.hover:bg-white/10]="!isScrolled()">
-          About
-        </a>
-        <a routerLink="/contributors"
-           routerLinkActive="nav-active"
-           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-           [class.text-slate-700]="isScrolled()"
-           [class.text-white]="!isScrolled()"
-           [class.hover:bg-slate-100]="isScrolled()"
-           [class.hover:bg-white/10]="!isScrolled()">
-          Contributors
-        </a>
-        <a routerLink="/ai-champions"
-           routerLinkActive="nav-active"
-           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-           [class.text-slate-700]="isScrolled()"
-           [class.text-white]="!isScrolled()"
-           [class.hover:bg-slate-100]="isScrolled()"
-           [class.hover:bg-white/10]="!isScrolled()">
-          AI Champions
-        </a>
+        <!-- Explore dropdown -->
+        <div class="relative">
+          <button (click)="toggleExploreMenu()"
+             class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1"
+             [class.text-slate-700]="isScrolled()"
+             [class.text-white]="!isScrolled()"
+             [class.hover:bg-slate-100]="isScrolled()"
+             [class.hover:bg-white/10]="!isScrolled()">
+            Explore
+            <svg class="w-3.5 h-3.5 transition-transform duration-200" [class.rotate-180]="isExploreMenuOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          @if (isExploreMenuOpen()) {
+            <div class="absolute top-full left-0 mt-2 w-52 rounded-xl shadow-xl border overflow-hidden animate-slideDown"
+                 [class.bg-white]="isScrolled()" [class.border-slate-100]="isScrolled()"
+                 [class.bg-dark-light]="!isScrolled()" [class.border-white/10]="!isScrolled()">
+              <a routerLink="/pair-programming" (click)="closeExploreMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                Pair Programming
+              </a>
+              <a routerLink="/presentations" (click)="closeExploreMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                Presentations
+              </a>
+            </div>
+          }
+        </div>
+        <!-- More dropdown -->
+        <div class="relative">
+          <button (click)="toggleMoreMenu()"
+             class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1"
+             [class.text-slate-700]="isScrolled()"
+             [class.text-white]="!isScrolled()"
+             [class.hover:bg-slate-100]="isScrolled()"
+             [class.hover:bg-white/10]="!isScrolled()">
+            More
+            <svg class="w-3.5 h-3.5 transition-transform duration-200" [class.rotate-180]="isMoreMenuOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          @if (isMoreMenuOpen()) {
+            <div class="absolute top-full right-0 mt-2 w-48 rounded-xl shadow-xl border overflow-hidden animate-slideDown"
+                 [class.bg-white]="isScrolled()" [class.border-slate-100]="isScrolled()"
+                 [class.bg-dark-light]="!isScrolled()" [class.border-white/10]="!isScrolled()">
+              <a routerLink="/about" (click)="closeMoreMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                About
+              </a>
+              <a routerLink="/contributors" (click)="closeMoreMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                Contributors
+              </a>
+              <a routerLink="/ai-champions" (click)="closeMoreMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                AI Champions
+              </a>
+            </div>
+          }
+        </div>
+        <!-- Legal dropdown -->
+        <div class="relative">
+          <button (click)="toggleLegalMenu()"
+             class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1"
+             [class.text-slate-700]="isScrolled()"
+             [class.text-white]="!isScrolled()"
+             [class.hover:bg-slate-100]="isScrolled()"
+             [class.hover:bg-white/10]="!isScrolled()">
+            Legal
+            <svg class="w-3.5 h-3.5 transition-transform duration-200" [class.rotate-180]="isLegalMenuOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          @if (isLegalMenuOpen()) {
+            <div class="absolute top-full right-0 mt-2 w-48 rounded-xl shadow-xl border overflow-hidden animate-slideDown"
+                 [class.bg-white]="isScrolled()" [class.border-slate-100]="isScrolled()"
+                 [class.bg-dark-light]="!isScrolled()" [class.border-white/10]="!isScrolled()">
+              <a routerLink="/privacy-policy" (click)="closeLegalMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                Privacy Policy
+              </a>
+              <a routerLink="/terms-of-service" (click)="closeLegalMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                Terms of Service
+              </a>
+            </div>
+          }
+        </div>
       </div>
 
       <!-- CTA + Mobile Toggle -->
@@ -163,6 +227,16 @@
            routerLinkActive="bg-primary/10 text-primary"
            class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
           AI Champions
+        </a>
+        <a routerLink="/privacy-policy" (click)="closeMobileMenu()"
+           routerLinkActive="bg-primary/10 text-primary"
+           class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+          Privacy Policy
+        </a>
+        <a routerLink="/terms-of-service" (click)="closeMobileMenu()"
+           routerLinkActive="bg-primary/10 text-primary"
+           class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+          Terms of Service
         </a>
         <div class="pt-2 pb-1 space-y-2">
           <button (click)="changeRole()"
