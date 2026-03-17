@@ -2,6 +2,11 @@
   display: block;
 }
 
+.nav-dark-bg {
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+}
+
 .nav-active {
   background: rgba(99, 102, 241, 0.1);
   color: #6366f1 !important;
