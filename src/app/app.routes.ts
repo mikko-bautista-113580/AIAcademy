@@ -10,19 +10,22 @@ import { RoleSelection } from './pages/roleselection/roleselection';
 import { PrivacyPolicy } from './pages/privacypolicy/privacypolicy';
 import { TermsOfService } from './pages/termsofservice/termsofservice';
 import { Articles } from './pages/articles/articles';
+import { Login } from './pages/login/login';
 import { roleGuard } from './guards/role.guard';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  { path: 'select-role', component: RoleSelection },
-  { path: '', component: Landing, canActivate: [roleGuard] },
-  { path: 'get-started', component: GetStarted, canActivate: [roleGuard] },
-  { path: 'pair-programming', component: PairProgramming, canActivate: [roleGuard] },
-  { path: 'presentations', component: Presentations, canActivate: [roleGuard] },
-  { path: 'about', component: About, canActivate: [roleGuard] },
-  { path: 'contributors', component: Contributors, canActivate: [roleGuard] },
-  { path: 'ai-champions', component: AIChampions, canActivate: [roleGuard] },
-  { path: 'articles', component: Articles, canActivate: [roleGuard] },
-  { path: 'privacy-policy', component: PrivacyPolicy, canActivate: [roleGuard] },
-  { path: 'terms-of-service', component: TermsOfService, canActivate: [roleGuard] },
+  { path: 'login', component: Login },
+  { path: 'select-role', component: RoleSelection, canActivate: [authGuard] },
+  { path: '', component: Landing, canActivate: [authGuard, roleGuard] },
+  { path: 'get-started', component: GetStarted, canActivate: [authGuard, roleGuard] },
+  { path: 'pair-programming', component: PairProgramming, canActivate: [authGuard, roleGuard] },
+  { path: 'presentations', component: Presentations, canActivate: [authGuard, roleGuard] },
+  { path: 'about', component: About, canActivate: [authGuard, roleGuard] },
+  { path: 'contributors', component: Contributors, canActivate: [authGuard, roleGuard] },
+  { path: 'ai-champions', component: AIChampions, canActivate: [authGuard, roleGuard] },
+  { path: 'articles', component: Articles, canActivate: [authGuard, roleGuard] },
+  { path: 'privacy-policy', component: PrivacyPolicy, canActivate: [authGuard, roleGuard] },
+  { path: 'terms-of-service', component: TermsOfService, canActivate: [authGuard, roleGuard] },
   { path: '**', redirectTo: '' }
 ];

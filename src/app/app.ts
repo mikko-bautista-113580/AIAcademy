@@ -23,8 +23,8 @@ export class App {
   showLayout = toSignal(
     this.router.events.pipe(
       filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-      map(e => !e.urlAfterRedirects.startsWith('/select-role'))
+      map(e => !e.urlAfterRedirects.startsWith('/select-role') && !e.urlAfterRedirects.startsWith('/login'))
     ),
-    { initialValue: !this.router.url.startsWith('/select-role') }
+    { initialValue: !this.router.url.startsWith('/select-role') && !this.router.url.startsWith('/login') }
   );
 }
