@@ -63,6 +63,13 @@
                  [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
                 Presentations
               </a>
+              <a routerLink="/articles" (click)="closeExploreMenu()"
+                 routerLinkActive="nav-active"
+                 class="block px-4 py-2.5 text-sm font-medium transition-colors"
+                 [class.text-slate-700]="isScrolled()" [class.hover:bg-slate-50]="isScrolled()"
+                 [class.text-white]="!isScrolled()" [class.hover:bg-white/10]="!isScrolled()">
+                Articles
+              </a>
             </div>
           }
         </div>
@@ -212,6 +219,11 @@
            routerLinkActive="bg-primary/10 text-primary"
            class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
           Presentations
+        </a>
+        <a routerLink="/articles" (click)="closeMobileMenu()"
+           routerLinkActive="bg-primary/10 text-primary"
+           class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+          Articles
         </a>
         <a routerLink="/about" (click)="closeMobileMenu()"
            routerLinkActive="bg-primary/10 text-primary"

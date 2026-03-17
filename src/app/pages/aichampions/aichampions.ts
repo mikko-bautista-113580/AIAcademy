@@ -50,5 +50,13 @@ export class AIChampions {
       quote: 'AI has become my 24/7 pair programmer. It helps me explore ideas, enhance and validate code, and continuously learn while implementing scalable solutions. By combining AI tools with my experience, I can experiment, solve problems, and deliver value to the team—without compromising my daily tasks—while also helping teammates resolve challenges more efficiently.',
       gradient: 'from-amber-500 to-orange-600',
     },
+    {
+      id: 'alvin-paderes',
+      name: 'Alvin Paderes',
+      role: 'Technical Lead',
+      photo: 'AIChampions/AlvinPaderes.jpg',
+      quote: 'Advances AI adoption in Quality Assurance by streamlining testing workflows, improving coverage, and enabling teams to work more efficiently.',
+      gradient: 'from-cyan-500 to-blue-600',
+    },
   ];
 }

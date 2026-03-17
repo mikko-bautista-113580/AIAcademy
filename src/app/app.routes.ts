@@ -9,6 +9,7 @@ import { GetStarted } from './pages/getstarted/getstarted';
 import { RoleSelection } from './pages/roleselection/roleselection';
 import { PrivacyPolicy } from './pages/privacypolicy/privacypolicy';
 import { TermsOfService } from './pages/termsofservice/termsofservice';
+import { Articles } from './pages/articles/articles';
 import { roleGuard } from './guards/role.guard';
 
 export const routes: Routes = [
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'about', component: About, canActivate: [roleGuard] },
   { path: 'contributors', component: Contributors, canActivate: [roleGuard] },
   { path: 'ai-champions', component: AIChampions, canActivate: [roleGuard] },
+  { path: 'articles', component: Articles, canActivate: [roleGuard] },
   { path: 'privacy-policy', component: PrivacyPolicy, canActivate: [roleGuard] },
   { path: 'terms-of-service', component: TermsOfService, canActivate: [roleGuard] },
   { path: '**', redirectTo: '' }
