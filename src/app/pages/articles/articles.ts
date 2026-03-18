@@ -10,6 +10,7 @@ interface Article {
   authorDescription?: string;
   date: string;
   gradient: string;
+  dotColor: string;
 }
 
 @Component({
@@ -32,6 +33,18 @@ export class Articles {
       authorDescription: 'NPI AI Academy empowers individuals and teams to work confidently and effectively with Artificial Intelligence. We provide hands-on learning, real-world use cases, and peer-driven knowledge sharing to help people combine AI with human creativity, judgment, and collaboration.',
       date: 'March 17, 2025',
       gradient: 'from-emerald-500 to-teal-600',
+      dotColor: '#10b981',
+    },
+    {
+      id: 'building-better-ai-workflows',
+      title: 'Building Better AI Workflows: Start with What Already Exists',
+      subtitle: 'One of the most effective ways to create a reliable AI workflow is simple: start with an existing process or working code.',
+      author: 'Mikko Bautista',
+      authorPhoto: 'Contributors Image/MikkoBautista.jpg',
+      authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
+      date: 'March 18, 2025',
+      gradient: 'from-amber-500 to-orange-600',
+      dotColor: '#f59e0b',
     },
     {
       id: 'curious-about-ai',
@@ -42,6 +55,7 @@ export class Articles {
       authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
       date: 'March 18, 2025',
       gradient: 'from-sky-500 to-indigo-600',
+      dotColor: '#0ea5e9',
     },
     {
       id: 'learning-ai-step-by-step',
@@ -52,6 +66,7 @@ export class Articles {
       authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
       date: 'March 18, 2025',
       gradient: 'from-rose-500 to-pink-600',
+      dotColor: '#f43f5e',
     },
     {
       id: 'understanding-ai',
@@ -62,6 +77,7 @@ export class Articles {
       authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
       date: 'March 17, 2025',
       gradient: 'from-primary to-primary-dark',
+      dotColor: '#6366f1',
     },
     {
       id: 'work-smarter',
@@ -71,6 +87,7 @@ export class Articles {
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       date: 'March 17, 2025',
       gradient: 'from-violet-500 to-violet-700',
+      dotColor: '#8b5cf6',
     },
     {
       id: 'ai-everyday-work',
@@ -80,6 +97,7 @@ export class Articles {
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       date: 'March 17, 2025',
       gradient: 'from-cyan-500 to-blue-600',
+      dotColor: '#06b6d4',
     },
     {
       id: 'why-learning-ai-matters',
@@ -89,6 +107,7 @@ export class Articles {
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       date: 'March 17, 2025',
       gradient: 'from-amber-500 to-orange-600',
+      dotColor: '#f59e0b',
     },
   ];
 

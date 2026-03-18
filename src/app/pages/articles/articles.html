@@ -118,7 +118,7 @@
             class="article-card w-full text-left group p-6 rounded-2xl bg-white border border-slate-200/60 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/[0.06] transition-all duration-500 hover:-translate-y-1">
             <div class="flex items-center justify-between mb-4">
               <span class="text-slate-400 text-xs font-medium">{{ article.date }}</span>
-              <span class="w-2 h-2 rounded-full" [class]="article.gradient.replace('from-', 'bg-').split(' ')[0]"></span>
+              <span class="w-2 h-2 rounded-full" [style.background-color]="article.dotColor"></span>
             </div>
             <h3 class="text-lg font-bold text-dark mb-2.5 leading-snug group-hover:text-primary transition-colors duration-300 line-clamp-2">{{ article.title }}</h3>
             <p class="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-4">{{ article.subtitle }}</p>
@@ -130,6 +130,212 @@
             </div>
           </button>
         }
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Article Detail: Building Better AI Workflows -->
+@if (selectedArticleId === 'building-better-ai-workflows') {
+  <section class="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
+      <button (click)="clearSelection()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-primary font-semibold text-sm mb-10 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+        </svg>
+        Back to articles
+      </button>
+
+      <div class="mb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-gradient-to-r from-amber-500 to-orange-600 text-white">Article</span>
+          <span class="text-slate-400 text-sm">March 18, 2025</span>
+          <span class="text-slate-300">&middot;</span>
+          <span class="flex items-center gap-2">
+            <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+          </span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Building Better AI Workflows: Start with What Already Exists</h1>
+        <p class="text-slate-500 text-lg leading-relaxed">One of the most effective ways to create a reliable AI workflow is simple: start with an existing process or working code.</p>
+        <div class="mt-6 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      </div>
+
+      <article class="reading-content space-y-8">
+        <div class="space-y-4">
+          <p class="text-slate-600 leading-relaxed">
+            When people start using AI to build workflows, one common mistake is trying to create everything from scratch. While this sounds efficient, it often leads to confusion, errors, and even incorrect outputs.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Based on real experience, one of the most effective ways to create a reliable AI workflow is simple: start with an existing process or working code.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">Why Starting from Existing Work Matters</h2>
+          <p class="text-slate-600 leading-relaxed">
+            AI performs best when it has context and reference. If you already have:
+          </p>
+          <ul class="space-y-3 ml-2">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+              <span class="text-slate-600">an existing process</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+              <span class="text-slate-600">a working feature</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+              <span class="text-slate-600">or a piece of code</span>
+            </li>
+          </ul>
+          <p class="text-slate-600 leading-relaxed">
+            you give AI something concrete to follow. Instead of guessing, the AI can:
+          </p>
+          <ul class="space-y-3 ml-2">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-orange-500 flex-shrink-0"></span>
+              <span class="text-slate-600">understand the structure</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-orange-500 flex-shrink-0"></span>
+              <span class="text-slate-600">recognize patterns</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-orange-500 flex-shrink-0"></span>
+              <span class="text-slate-600">and replicate the logic step by step</span>
+            </li>
+          </ul>
+          <p class="text-slate-600 leading-relaxed">
+            This leads to more accurate and usable results.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">Step-by-Step: From Existing to Improved Workflow</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Here's a practical approach you can follow:
+          </p>
+
+          <div class="space-y-6">
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-dark">1. Identify a working reference</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Find a process or code that already works. It doesn't need to be perfect — just functional.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-dark">2. Break it down</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Understand how it works:
+              </p>
+              <ul class="space-y-3 ml-2">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+                  <span class="text-slate-600">What are the steps?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+                  <span class="text-slate-600">What inputs and outputs are involved?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+                  <span class="text-slate-600">What logic is being followed?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-dark">3. Guide the AI gradually</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Instead of asking for everything at once:
+              </p>
+              <ul class="space-y-3 ml-2">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+                  <span class="text-slate-600">Start with one part</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+                  <span class="text-slate-600">Then move to the next</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+                  <span class="text-slate-600">Build step by step</span>
+                </li>
+              </ul>
+              <p class="text-slate-600 leading-relaxed">
+                This keeps the AI focused and reduces errors.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-dark">4. Recreate or improve the workflow</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Once the AI understands the process, you can replicate it, optimize it, or adapt it for a new use case.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">What If the Task Is Already Completed?</h2>
+          <p class="text-slate-600 leading-relaxed">
+            If you've already solved the problem manually, that's even better. You can:
+          </p>
+          <ul class="space-y-3 ml-2">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+              <span class="text-slate-600">explain how you accomplished the task</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+              <span class="text-slate-600">provide the steps or code you used</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+              <span class="text-slate-600">and ask the AI to convert it into a structured workflow</span>
+            </li>
+          </ul>
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-amber-500/5 to-orange-600/5 border border-amber-500/10">
+            <p class="text-slate-700 leading-relaxed">
+              This approach is powerful because the logic is already proven — the AI just organizes and enhances it.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">Reducing AI Hallucination</h2>
+          <p class="text-slate-600 leading-relaxed">
+            One major benefit of this method is reducing hallucination. When AI has no reference, it tends to guess missing details, generate incorrect assumptions, or produce inconsistent outputs.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            But when you provide real examples, actual code, or a clear process — you significantly lower the chance of errors.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">Final Thought</h2>
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-amber-500/5 to-orange-600/5 border border-amber-500/10">
+            <p class="text-slate-700 leading-relaxed">
+              There is no need to rush or reinvent everything when working with AI. The smartest approach is to build on what already works. Use existing processes as your foundation. Guide the AI step by step. And let real experience shape the workflow.
+            </p>
+            <p class="text-slate-700 leading-relaxed mt-3">
+              This method is not just theoretical — it's proven through practice, and it consistently delivers better, more reliable results.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <div class="mt-16 pt-8 border-t border-slate-100">
+        <button (click)="clearSelection()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-primary font-semibold text-sm hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+          </svg>
+          Back to all articles
+        </button>
       </div>
     </div>
   </section>
