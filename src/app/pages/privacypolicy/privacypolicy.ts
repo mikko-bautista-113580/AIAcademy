@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -8,5 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './privacypolicy.scss',
 })
 export class PrivacyPolicy {
-  lastUpdated = 'March 15, 2026';
+  private authService = inject(AuthService);
+  isAuthenticated = this.authService.isAuthenticated;
+  lastUpdated = 'March 18, 2026';
 }

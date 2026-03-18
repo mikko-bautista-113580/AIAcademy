@@ -25,7 +25,7 @@ export const routes: Routes = [
   { path: 'contributors', component: Contributors, canActivate: [authGuard, roleGuard] },
   { path: 'ai-champions', component: AIChampions, canActivate: [authGuard, roleGuard] },
   { path: 'articles', component: Articles, canActivate: [authGuard, roleGuard] },
-  { path: 'privacy-policy', component: PrivacyPolicy, canActivate: [authGuard, roleGuard] },
-  { path: 'terms-of-service', component: TermsOfService, canActivate: [authGuard, roleGuard] },
+  { path: 'privacy-policy', component: PrivacyPolicy },
+  { path: 'terms-of-service', component: TermsOfService },
   { path: '**', redirectTo: '' }
 ];

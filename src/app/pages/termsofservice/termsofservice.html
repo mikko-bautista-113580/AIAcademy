@@ -1,3 +1,13 @@
+@if (!isAuthenticated()) {
+<!-- Back to Login -->
+<div class="fixed top-6 left-6 z-50">
+  <a routerLink="/login" class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/20 transition-all">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    Back to Login
+  </a>
+</div>
+}
+
 <!-- Page Header -->
 <section class="pt-32 pb-16 bg-dark relative overflow-hidden">
   <div class="absolute inset-0">
@@ -105,6 +115,24 @@
       <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8">
         <h2 class="text-xl font-bold text-dark mb-4 flex items-center gap-3">
           <span class="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">5</span>
+          Analytics & Visitor Tracking
+        </h2>
+        <div class="space-y-4 text-slate-600 leading-relaxed">
+          <p>NPI AI Academy uses a lightweight, privacy-respecting visitor counter to measure platform engagement:</p>
+          <ul class="space-y-2 ml-4">
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">What We Track:</strong> An anonymous, aggregate count of visitor sessions. Each browser session is counted once when you access the landing page after signing in.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">What We Do Not Track:</strong> We do not track individual user identities, browsing behavior, page navigation, IP addresses, device fingerprints, or any personally identifiable information as part of the visitor counter.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">How It Works:</strong> A server-side counter stored in Netlify Blobs increments by one per browser session. Your browser's session storage prevents duplicate counting within the same session. The total count is displayed publicly on the landing page.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">No Third-Party Analytics:</strong> We do not use Google Analytics, Meta Pixel, or any third-party tracking services. The visitor counter is entirely first-party and self-hosted on our Netlify infrastructure.</span></li>
+          </ul>
+          <p>By using this platform, you acknowledge and consent to this anonymous session counting for the purpose of measuring platform adoption and engagement.</p>
+        </div>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8">
+        <h2 class="text-xl font-bold text-dark mb-4 flex items-center gap-3">
+          <span class="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">6</span>
           Platform Availability & Changes
         </h2>
         <div class="space-y-4 text-slate-600 leading-relaxed">
@@ -118,10 +146,10 @@
         </div>
       </div>
 
-      <!-- Section 6 -->
+      <!-- Section 7 -->
       <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8">
         <h2 class="text-xl font-bold text-dark mb-4 flex items-center gap-3">
-          <span class="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">6</span>
+          <span class="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">7</span>
           Disclaimer
         </h2>
         <p class="text-slate-600 leading-relaxed">NPI AI Academy content is provided for educational and professional development purposes. While we strive for accuracy, AI tools and best practices evolve rapidly. The platform's content reflects the knowledge and experience of NPI contributors at the time of creation. Always apply professional judgment when implementing AI-assisted solutions in production environments, and validate AI-generated outputs against NPI's quality standards.</p>
@@ -137,10 +165,17 @@
           <a routerLink="/privacy-policy" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white border border-slate-200 text-dark rounded-xl text-sm font-semibold hover:bg-slate-50 transition-colors">
             Privacy Policy
           </a>
-          <a routerLink="/about" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary-dark transition-colors">
-            About NPI AI Academy
+          @if (isAuthenticated()) {
+          <a routerLink="/" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary-dark transition-colors">
+            Back to Home
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </a>
+          } @else {
+          <a routerLink="/login" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary-dark transition-colors">
+            Back to Login
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          }
         </div>
       </div>
 

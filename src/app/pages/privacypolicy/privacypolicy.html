@@ -1,3 +1,13 @@
+@if (!isAuthenticated()) {
+<!-- Back to Login -->
+<div class="fixed top-6 left-6 z-50">
+  <a routerLink="/login" class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/20 transition-all">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    Back to Login
+  </a>
+</div>
+}
+
 <!-- Page Header -->
 <section class="pt-32 pb-16 bg-dark relative overflow-hidden">
   <div class="absolute inset-0">
@@ -45,7 +55,8 @@
           <ul class="space-y-2 ml-4">
             <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Role Selection:</strong> The role you select (QA, BA, Developer, Technical Lead, or Management) is stored in your browser session to personalize your learning experience.</span></li>
             <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Usage Data:</strong> Page visits and content interactions may be logged to improve the platform and tailor content to each role's needs.</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Authentication Data:</strong> If Azure AD authentication is enabled, your organizational login credentials are managed entirely by Microsoft and your organization's identity provider — we do not store passwords.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Authentication Data:</strong> Your organizational login credentials are managed entirely by Microsoft Entra ID (Azure AD) and your organization's identity provider — we do not store passwords.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Visitor Count:</strong> We track an anonymous, aggregate visitor count to measure platform engagement. Each browser session is counted once using a lightweight server-side counter. No personal information, user identity, or browsing behavior is recorded — only the total count of sessions is stored.</span></li>
           </ul>
         </div>
       </div>
@@ -78,8 +89,9 @@
           <p>Protecting your data is a core responsibility aligned with NPI's commitment to building secure, high-quality software:</p>
           <ul class="space-y-2 ml-4">
             <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Session Storage:</strong> Role preferences are stored locally in your browser session and are cleared when you close your browser. No role data is sent to external servers.</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Internal Hosting:</strong> All platform content is hosted within NPI's internal infrastructure, accessible only on the corporate network or via VPN.</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">No External Tracking:</strong> NPI AI Academy does not use third-party analytics, advertising trackers, or external cookies.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Visitor Counter Storage:</strong> The aggregate visitor count is stored using Netlify Blobs, a secure server-side key-value store provided by our hosting platform. Only a single numeric value (the total session count) is stored — no user identifiers, IP addresses, or personal data are recorded or associated with this counter.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">Hosting:</strong> The platform is hosted on Netlify with Azure AD authentication. Content is accessible only to authenticated NPI team members.</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span><strong class="text-dark">No External Tracking:</strong> NPI AI Academy does not use third-party analytics, advertising trackers, or external cookies. The visitor counter is an internal, first-party mechanism that stores no personally identifiable information.</span></li>
           </ul>
         </div>
       </div>
@@ -114,10 +126,17 @@
       <div class="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl border border-primary/20 p-8">
         <h2 class="text-xl font-bold text-dark mb-3">Questions?</h2>
         <p class="text-slate-600 leading-relaxed mb-4">If you have any questions about this Privacy Policy or how NPI AI Academy handles your data, reach out to the AI Academy team through NPI's internal communication channels.</p>
-        <a routerLink="/about" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary-dark transition-colors">
-          Learn About NPI AI Academy
+        @if (isAuthenticated()) {
+        <a routerLink="/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary-dark transition-colors">
+          Back to Home
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
+        } @else {
+        <a routerLink="/login" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary-dark transition-colors">
+          Back to Login
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        }
       </div>
 
     </div>

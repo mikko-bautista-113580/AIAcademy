@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-terms-of-service',
@@ -8,5 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './termsofservice.scss',
 })
 export class TermsOfService {
-  lastUpdated = 'March 15, 2026';
+  private authService = inject(AuthService);
+  isAuthenticated = this.authService.isAuthenticated;
+  lastUpdated = 'March 18, 2026';
 }
