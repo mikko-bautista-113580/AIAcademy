@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Glow -->
+  <circle cx="350" cy="200" r="200" fill="#06b6d4" opacity="0.05"/>
+  <circle cx="650" cy="120" r="140" fill="#8b5cf6" opacity="0.05"/>
+  <!-- Left: Windsurf Editor with Roadmaps panel -->
+  <rect x="40" y="55" width="330" height="300" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <!-- Title bar -->
+  <rect x="40" y="55" width="330" height="32" rx="12" fill="#334155"/>
+  <rect x="40" y="75" width="330" height="12" fill="#334155"/>
+  <circle cx="60" cy="71" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="76" cy="71" r="5" fill="#eab308" opacity="0.8"/>
+  <circle cx="92" cy="71" r="5" fill="#22c55e" opacity="0.8"/>
+  <text x="205" y="75" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="10">Windsurf — Roadmaps Panel</text>
+  <!-- Roadmaps panel header -->
+  <rect x="55" y="97" width="300" height="30" rx="6" fill="#06b6d4" opacity="0.1" stroke="#06b6d4" stroke-width="1"/>
+  <text x="65" y="116" fill="#67e8f9" font-family="sans-serif" font-size="11" font-weight="bold">🗺️ Roadmaps</text>
+  <text x="195" y="116" fill="#64748b" font-family="sans-serif" font-size="10">CodeMap Generator</text>
+  <!-- Input: workflow file -->
+  <rect x="55" y="137" width="300" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="65" y="155" fill="#94a3b8" font-family="monospace" font-size="9">Analyze workflow-creator.md</text>
+  <!-- Generate button -->
+  <rect x="255" y="140" width="90" height="22" rx="6" fill="#06b6d4" opacity="0.3"/>
+  <text x="300" y="155" text-anchor="middle" fill="#67e8f9" font-family="sans-serif" font-size="9" font-weight="bold">▶ Generate</text>
+  <!-- Processing status -->
+  <rect x="55" y="175" width="300" height="40" rx="6" fill="#06b6d4" opacity="0.06" stroke="#06b6d4" stroke-width="1"/>
+  <text x="65" y="192" fill="#67e8f9" font-family="sans-serif" font-size="9" font-weight="bold">✨ Analyzing workflow file...</text>
+  <text x="65" y="206" fill="#64748b" font-family="sans-serif" font-size="9">Tracing connections: entry → final steps</text>
+  <!-- Workflow file list -->
+  <text x="65" y="232" fill="#94a3b8" font-family="sans-serif" font-size="9" font-weight="bold">Detected Functions:</text>
+  <rect x="55" y="240" width="300" height="20" rx="4" fill="#0f172a"/>
+  <text x="65" y="254" fill="#86efac" font-family="monospace" font-size="8">→ createWorkflow()</text>
+  <text x="220" y="254" fill="#64748b" font-family="monospace" font-size="8">entry point</text>
+  <rect x="55" y="264" width="300" height="20" rx="4" fill="#0f172a"/>
+  <text x="65" y="278" fill="#fbbf24" font-family="monospace" font-size="8">→ validateInputs()</text>
+  <text x="220" y="278" fill="#64748b" font-family="monospace" font-size="8">step 2</text>
+  <rect x="55" y="288" width="300" height="20" rx="4" fill="#0f172a"/>
+  <text x="65" y="302" fill="#93c5fd" font-family="monospace" font-size="8">→ generateTemplate()</text>
+  <text x="220" y="302" fill="#64748b" font-family="monospace" font-size="8">step 3</text>
+  <rect x="55" y="312" width="300" height="20" rx="4" fill="#0f172a"/>
+  <text x="65" y="326" fill="#c4b5fd" font-family="monospace" font-size="8">→ saveWorkflow()</text>
+  <text x="220" y="326" fill="#64748b" font-family="monospace" font-size="8">final step</text>
+  <!-- Right: Generated CodeMap Diagram -->
+  <rect x="420" y="55" width="340" height="300" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="590" y="80" text-anchor="middle" fill="#67e8f9" font-family="sans-serif" font-size="12" font-weight="bold">📊 Generated CodeMap</text>
+  <!-- Flowchart nodes -->
+  <!-- Entry node -->
+  <rect x="535" y="95" width="120" height="30" rx="15" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="595" y="114" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="9" font-weight="bold">createWorkflow()</text>
+  <!-- Arrow down -->
+  <line x1="595" y1="125" x2="595" y2="145" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="590,142 595,150 600,142" fill="#475569"/>
+  <!-- Validate node -->
+  <rect x="535" y="150" width="120" height="30" rx="6" fill="#fbbf24" opacity="0.1" stroke="#fbbf24" stroke-width="1"/>
+  <text x="595" y="169" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-size="9">validateInputs()</text>
+  <!-- Arrow splits -->
+  <line x1="595" y1="180" x2="595" y2="195" stroke="#475569" stroke-width="1.5"/>
+  <!-- Diamond decision -->
+  <polygon points="595,195 615,210 595,225 575,210" fill="#0f172a" stroke="#f97316" stroke-width="1"/>
+  <text x="595" y="213" text-anchor="middle" fill="#fb923c" font-family="sans-serif" font-size="7">valid?</text>
+  <!-- Yes branch -->
+  <line x1="615" y1="210" x2="680" y2="210" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="645" y="205" fill="#22c55e" font-family="sans-serif" font-size="7">yes</text>
+  <!-- Generate node (right) -->
+  <rect x="680" y="195" width="60" height="30" rx="6" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+  <text x="710" y="214" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="7">generate</text>
+  <text x="710" y="222" text-anchor="middle" fill="#93c5fd" font-family="sans-serif" font-size="7">Template()</text>
+  <!-- No branch -->
+  <line x1="575" y1="210" x2="510" y2="210" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="540" y="205" fill="#ef4444" font-family="sans-serif" font-size="7">no</text>
+  <!-- Error node (left) -->
+  <rect x="450" y="195" width="60" height="30" rx="6" fill="#ef4444" opacity="0.1" stroke="#ef4444" stroke-width="1"/>
+  <text x="480" y="214" text-anchor="middle" fill="#fca5a5" font-family="sans-serif" font-size="7">showError()</text>
+  <!-- Arrow from generate down -->
+  <line x1="710" y1="225" x2="710" y2="250" stroke="#475569" stroke-width="1.5"/>
+  <line x1="710" y1="250" x2="595" y2="250" stroke="#475569" stroke-width="1.5"/>
+  <line x1="595" y1="250" x2="595" y2="265" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="590,262 595,270 600,262" fill="#475569"/>
+  <!-- Save node -->
+  <rect x="535" y="270" width="120" height="30" rx="6" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="595" y="289" text-anchor="middle" fill="#c4b5fd" font-family="sans-serif" font-size="9">saveWorkflow()</text>
+  <!-- Arrow to end -->
+  <line x1="595" y1="300" x2="595" y2="320" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="590,317 595,325 600,317" fill="#475569"/>
+  <!-- End node -->
+  <rect x="555" y="325" width="80" height="22" rx="11" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1"/>
+  <text x="595" y="340" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="9">✅ Done</text>
+  <!-- Title -->
+  <text x="400" y="400" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">Workflow CodeMaps in Windsurf</text>
+  <text x="400" y="422" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="13">Roadmaps Panel • Workflow Visualization • Dependency Tracing</text>
+  <!-- Tag -->
+  <rect x="660" y="395" width="110" height="28" rx="14" fill="#06b6d4" opacity="0.2"/>
+  <text x="715" y="414" text-anchor="middle" fill="#67e8f9" font-family="sans-serif" font-size="12" font-weight="bold">🗺️ Windsurf</text>
+</svg>

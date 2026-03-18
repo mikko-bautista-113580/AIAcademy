@@ -116,20 +116,129 @@
         @for (article of selectedAuthorGroup.articles; track article.id) {
           <button (click)="selectArticle(article.id)"
             class="article-card w-full text-left group p-6 rounded-2xl bg-white border border-slate-200/60 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/[0.06] transition-all duration-500 hover:-translate-y-1">
-            <div class="flex items-center gap-2.5 mb-4">
-              <span class="px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-gradient-to-r text-white" [class]="article.gradient">Article</span>
+            <div class="flex items-center justify-between mb-4">
               <span class="text-slate-400 text-xs font-medium">{{ article.date }}</span>
+              <span class="w-2 h-2 rounded-full" [class]="article.gradient.replace('from-', 'bg-').split(' ')[0]"></span>
             </div>
             <h3 class="text-lg font-bold text-dark mb-2.5 leading-snug group-hover:text-primary transition-colors duration-300 line-clamp-2">{{ article.title }}</h3>
             <p class="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-4">{{ article.subtitle }}</p>
-            <div class="flex items-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1">
-              Read article
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-center gap-2 text-primary font-semibold text-sm">
+              <span class="group-hover:underline">Read more</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
               </svg>
             </div>
           </button>
         }
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Article Detail: Learning AI Step by Step -->
+@if (selectedArticleId === 'learning-ai-step-by-step') {
+  <section class="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
+      <button (click)="clearSelection()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-primary font-semibold text-sm mb-10 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+        </svg>
+        Back to articles
+      </button>
+
+      <div class="mb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-gradient-to-r from-rose-500 to-pink-600 text-white">Article</span>
+          <span class="text-slate-400 text-sm">March 18, 2025</span>
+          <span class="text-slate-300">&middot;</span>
+          <span class="flex items-center gap-2">
+            <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+          </span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Learning AI Step by Step: No Shortcuts, Just Experience</h1>
+        <p class="text-slate-500 text-lg leading-relaxed">The most effective way to truly understand AI is slowly, deliberately, and practically — one prompt at a time.</p>
+        <div class="mt-6 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      </div>
+
+      <article class="reading-content space-y-8">
+        <div class="space-y-4">
+          <p class="text-slate-600 leading-relaxed">
+            Artificial Intelligence (AI) is exciting, powerful, and sometimes overwhelming. With so many tools, tutorials, and courses available, it's easy to feel pressured to learn it all at once. But the most effective way to truly understand AI is slowly, deliberately, and practically.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">1. Start Small: One Prompt at a Time</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Begin with simple experiments. For example, try writing a single prompt for a language model or testing a basic AI tool. Observe what happens, take notes, and reflect on the result.
+          </p>
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-500/5 to-pink-600/5 border border-rose-500/10">
+            <p class="text-slate-700 leading-relaxed">
+              The goal isn't to master AI immediately — it's to understand how small steps lead to bigger understanding.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">2. Build Gradually</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Once you're comfortable with basic interactions, move to the next level: tweak parameters, combine prompts, or explore simple AI models. Each step builds upon your previous experience.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Over time, your confidence grows naturally, and complex concepts start to make sense.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">3. Embrace Mistakes as Learning</h2>
+          <p class="text-slate-600 leading-relaxed">
+            AI learning is not linear. You will make mistakes, get unexpected results, and sometimes feel stuck. Each of these moments is an opportunity to deepen your understanding.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Don't rush past errors — study them, experiment, and grow.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">4. Avoid Shortcut Mentality</h2>
+          <p class="text-slate-600 leading-relaxed">
+            There is no magic trick to instantly "know AI." Skipping foundational steps may seem efficient, but it often leads to confusion later.
+          </p>
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-500/5 to-pink-600/5 border border-rose-500/10">
+            <p class="text-slate-700 leading-relaxed">
+              True AI fluency comes from consistent practice, curiosity, and patience.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">5. Reflect and Iterate</h2>
+          <p class="text-slate-600 leading-relaxed">
+            After each small project or experiment, take a moment to reflect. What worked? What didn't? How does this connect to your previous learning?
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Iteration is key — it turns isolated experiments into meaningful experience.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">Final Thought</h2>
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-500/5 to-pink-600/5 border border-rose-500/10">
+            <p class="text-slate-700 leading-relaxed">
+              Learning AI is like learning a musical instrument — you don't master it in one day. You progress note by note, prompt by prompt, project by project. Take your time, enjoy the process, and let your understanding grow naturally.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <div class="mt-16 pt-8 border-t border-slate-100">
+        <button (click)="clearSelection()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-primary font-semibold text-sm hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+          </svg>
+          Back to all articles
+        </button>
       </div>
     </div>
   </section>

@@ -34,6 +34,16 @@ export class Articles {
       gradient: 'from-emerald-500 to-teal-600',
     },
     {
+      id: 'learning-ai-step-by-step',
+      title: 'Learning AI Step by Step: No Shortcuts, Just Experience',
+      subtitle: 'The most effective way to truly understand AI is slowly, deliberately, and practically — one prompt at a time.',
+      author: 'Mikko Bautista',
+      authorPhoto: 'Contributors Image/MikkoBautista.jpg',
+      authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
+      date: 'March 18, 2025',
+      gradient: 'from-rose-500 to-pink-600',
+    },
+    {
       id: 'understanding-ai',
       title: 'Understanding Artificial Intelligence: A Simple Guide for Everyone',
       subtitle: 'A beginner-friendly guide to AI — what it is, how it works, and how it can support your daily work and professional growth.',

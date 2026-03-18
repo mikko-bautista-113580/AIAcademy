@@ -110,7 +110,7 @@ export class Landing implements OnInit, OnDestroy {
       ctaDescription: 'Learn how AI helps you write better user stories, map processes visually, and collaborate more effectively with dev teams.',
       ctaPrimaryCta: 'Start Analyzing Smarter',
       topicOrder: ['workflow-creator', 'nov23', 'pr-roadmap', 'test-case-association', 'gw-endpoint-generator', 'mark-echon', 'armando-lopez'],
-      videoOrder: ['api-user-stories', 'user-story-copilot', 'mermaid-ai', 'api-endpoint'],
+      videoOrder: ['api-user-stories', 'user-story-copilot', 'mermaid-ai', 'codemap-workflows', 'api-endpoint'],
       heroBadges: [{ icon: '📋', label: 'User Stories' }, { icon: '🔄', label: 'Workflows' }, { icon: '📐', label: 'Diagrams' }],
     },
     'Developer': {
@@ -130,7 +130,7 @@ export class Landing implements OnInit, OnDestroy {
       ctaDescription: 'Explore demos, pair programming sessions, and presentations — and start building real AI-assisted development skills today.',
       ctaPrimaryCta: 'Start Coding with AI',
       topicOrder: ['gw-endpoint-generator', 'mark-echon', 'armando-lopez', 'nov23', 'workflow-creator', 'pr-roadmap', 'test-case-association'],
-      videoOrder: ['api-endpoint', 'mermaid-ai', 'api-user-stories', 'user-story-copilot'],
+      videoOrder: ['api-endpoint', 'mermaid-ai', 'codemap-workflows', 'api-user-stories', 'user-story-copilot'],
       heroBadges: [{ icon: '▶️', label: 'Demos' }, { icon: '👥', label: 'Pair Programming' }, { icon: '📊', label: 'Presentations' }],
     },
     'Technical Lead': {
@@ -150,7 +150,7 @@ export class Landing implements OnInit, OnDestroy {
       ctaDescription: 'Equip yourself with the knowledge to choose the right AI tools, mentor your team, and drive technical excellence.',
       ctaPrimaryCta: 'Start Leading with AI',
       topicOrder: ['nov23', 'pr-roadmap', 'gw-endpoint-generator', 'workflow-creator', 'mark-echon', 'armando-lopez', 'test-case-association'],
-      videoOrder: ['api-endpoint', 'mermaid-ai', 'api-user-stories', 'user-story-copilot'],
+      videoOrder: ['api-endpoint', 'mermaid-ai', 'codemap-workflows', 'api-user-stories', 'user-story-copilot'],
       heroBadges: [{ icon: '🧠', label: 'AI Models' }, { icon: '🏗️', label: 'Architecture' }, { icon: '📝', label: 'Best Practices' }],
     },
     'Management': {
@@ -341,6 +341,18 @@ export class Landing implements OnInit, OnDestroy {
       tag: 'Diagrams',
       tagClass: 'bg-violet-500/15 text-violet-500',
       roles: ['Developer', 'BA', 'Technical Lead'],
+    },
+    {
+      id: 'codemap-workflows',
+      title: 'Workflow CodeMaps in Windsurf',
+      thumbnail: 'demos/codemap-workflows.svg',
+      description: 'Demonstrates how to use CodeMaps in Windsurf to visualize and understand workflows. Using the Roadmaps panel, you analyze a workflow file and the tool traces every connection from entry point to final step, generating a complete diagram of the process. From the diagram you can trace function flows, see dependencies, and understand the overall workflow — especially useful for debugging, code reviews, and onboarding new developers to quickly grasp how processes are connected across the system.',
+      src: '',
+      embedUrl: 'https://nelnet.sharepoint.com/teams/NPIExternalAPI/_layouts/15/stream.aspx?id=%2Fteams%2FNPIExternalAPI%2FShared%20Documents%2FGeneral%2FExternal%20API%2FMikko%2FRecording%2FUnderstanding%20Workflows%20Using%20CodeMaps%20in%20Windsurf%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E119c1e01%2Da7ff%2D4fae%2D94cb%2Ddc03cfbc837b',
+      icon: '🗺️',
+      tag: 'Windsurf',
+      tagClass: 'bg-cyan-500/15 text-cyan-500',
+      roles: ['Developer', 'Technical Lead', 'BA'],
     }
   ];
 
@@ -387,7 +399,7 @@ export class Landing implements OnInit, OnDestroy {
         return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
       });
 
-    this.pairProgrammingCount = 3;
+    this.pairProgrammingCount = 1;
     this.presentationCount = role ? this.presentationCountByRole[role] : 12;
 
     if (this.filteredTopics.length > 0) {

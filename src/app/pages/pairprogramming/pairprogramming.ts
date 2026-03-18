@@ -61,6 +61,7 @@ export class PairProgramming {
     },
     {
       id: 'alberto-terol',
+      hidden: true,
       title: 'AI SDLC - Pair Programming',
       presenter: 'Alberto Terol',
       thumbnail: 'demos/pp-alberto-terol.svg',
