@@ -3,6 +3,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { RoleService, Role } from '../../services/role.service';
+import { VisitorService } from '../../services/visitor.service';
 
 interface RoleContent {
   badge: string;
@@ -67,6 +68,9 @@ export class Landing implements OnInit, OnDestroy {
   private carouselInterval: any;
   private roleService = inject(RoleService);
   private sanitizer = inject(DomSanitizer);
+  private visitorService = inject(VisitorService);
+
+  visitorCount = this.visitorService.visitorCount;
 
   sanitizeUrl(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
@@ -409,6 +413,7 @@ export class Landing implements OnInit, OnDestroy {
       this.activeVideo.set(this.filteredDemos[0]);
     }
     this.startCarousel();
+    this.visitorService.trackVisit();
   }
 
   scrollActiveIntoView() {
