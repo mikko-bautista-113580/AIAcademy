@@ -135,6 +135,122 @@
   </section>
 }
 
+<!-- Article Detail: Curious About AI -->
+@if (selectedArticleId === 'curious-about-ai') {
+  <section class="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
+      <button (click)="clearSelection()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-primary font-semibold text-sm mb-10 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+        </svg>
+        Back to articles
+      </button>
+
+      <div class="mb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-gradient-to-r from-sky-500 to-indigo-600 text-white">Article</span>
+          <span class="text-slate-400 text-sm">March 18, 2025</span>
+          <span class="text-slate-300">&middot;</span>
+          <span class="flex items-center gap-2">
+            <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+          </span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Curious About AI? Here's a Simple Guide to Your Questions</h1>
+        <p class="text-slate-500 text-lg leading-relaxed">We all have questions about AI — what it is, how it works, and how we can use it. Let's answer them step by step, in simple terms.</p>
+        <div class="mt-6 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      </div>
+
+      <article class="reading-content space-y-8">
+        <div class="space-y-4">
+          <p class="text-slate-600 leading-relaxed">
+            We all have questions about Artificial Intelligence — what it is, how it works, and how we can use it. Sometimes, it feels like the more we ask, the more confusing it gets. But AI doesn't have to be complicated. Let's answer your questions step by step, in simple terms.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">1. What is AI?</h2>
+          <p class="text-slate-600 leading-relaxed">
+            AI is like teaching a computer to learn patterns and make decisions, almost like a human brain. Instead of memorizing every possible answer, it learns from examples to predict or generate new results.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">2. Can AI think like humans?</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Not exactly. AI can simulate certain tasks, like writing text, recognizing images, or recommending movies. But it doesn't have feelings, consciousness, or personal experience. It follows rules and patterns it learned from data.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">3. How do I start learning AI?</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Start small and simple.
+          </p>
+          <ul class="space-y-3 ml-2">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-500 flex-shrink-0"></span>
+              <span class="text-slate-600">Try asking a model basic questions.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-500 flex-shrink-0"></span>
+              <span class="text-slate-600">Explore one AI tool at a time.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-500 flex-shrink-0"></span>
+              <span class="text-slate-600">Experiment with tiny projects, like generating text, analyzing images, or making predictions.</span>
+            </li>
+          </ul>
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-500/5 to-indigo-600/5 border border-sky-500/10">
+            <p class="text-slate-700 leading-relaxed">
+              Remember: practice teaches more than theory.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">4. Do I need to be a programmer?</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Not always. Some AI tools are user-friendly and don't require coding. But learning basic programming can help you understand AI more deeply and unlock more advanced possibilities.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">5. What if I don't understand everything?</h2>
+          <p class="text-slate-600 leading-relaxed">
+            That's normal! AI is vast. Focus on one question or skill at a time, explore it, then move to the next. Over time, your understanding will grow naturally.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">6. Are there shortcuts?</h2>
+          <p class="text-slate-600 leading-relaxed">
+            No real shortcuts exist. The best way to learn AI is step by step, experimenting, reflecting, and asking questions whenever something isn't clear.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-dark">Final Thought</h2>
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-500/5 to-indigo-600/5 border border-sky-500/10">
+            <p class="text-slate-700 leading-relaxed">
+              If you have many questions about AI, don't feel overwhelmed. Pick one, explore it, and slowly build your knowledge. AI is like a puzzle — you connect the pieces one by one, and eventually, the whole picture makes sense.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <div class="mt-16 pt-8 border-t border-slate-100">
+        <button (click)="clearSelection()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-primary font-semibold text-sm hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+          </svg>
+          Back to all articles
+        </button>
+      </div>
+    </div>
+  </section>
+}
+
 <!-- Article Detail: Learning AI Step by Step -->
 @if (selectedArticleId === 'learning-ai-step-by-step') {
   <section class="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white min-h-screen">

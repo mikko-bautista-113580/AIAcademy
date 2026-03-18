@@ -34,6 +34,16 @@ export class Articles {
       gradient: 'from-emerald-500 to-teal-600',
     },
     {
+      id: 'curious-about-ai',
+      title: 'Curious About AI? Here\'s a Simple Guide to Your Questions',
+      subtitle: 'We all have questions about AI — what it is, how it works, and how we can use it. Let\'s answer them step by step, in simple terms.',
+      author: 'Mikko Bautista',
+      authorPhoto: 'Contributors Image/MikkoBautista.jpg',
+      authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
+      date: 'March 18, 2025',
+      gradient: 'from-sky-500 to-indigo-600',
+    },
+    {
       id: 'learning-ai-step-by-step',
       title: 'Learning AI Step by Step: No Shortcuts, Just Experience',
       subtitle: 'The most effective way to truly understand AI is slowly, deliberately, and practically — one prompt at a time.',
