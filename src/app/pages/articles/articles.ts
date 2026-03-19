@@ -6,6 +6,7 @@ interface Article {
   title: string;
   subtitle: string;
   author: string;
+  authorRole?: string;
   authorPhoto?: string;
   authorDescription?: string;
   date: string;
@@ -29,6 +30,7 @@ export class Articles {
       title: 'Tips to Combine AI with Human Creativity, Judgment, and Collaboration',
       subtitle: 'Practical tips to maximize the synergy between AI and human intelligence for better decisions, creativity, and teamwork.',
       author: 'NPI AI Academy',
+      authorRole: 'AI Learning Platform',
       authorPhoto: 'npiaiLogo.png',
       authorDescription: 'NPI AI Academy empowers individuals and teams to work confidently and effectively with Artificial Intelligence. We provide hands-on learning, real-world use cases, and peer-driven knowledge sharing to help people combine AI with human creativity, judgment, and collaboration.',
       date: 'March 17, 2025',
@@ -40,6 +42,7 @@ export class Articles {
       title: 'Building Better AI Workflows: Start with What Already Exists',
       subtitle: 'One of the most effective ways to create a reliable AI workflow is simple: start with an existing process or working code.',
       author: 'Mikko Bautista',
+      authorRole: 'Software Engineer II',
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
       date: 'March 18, 2025',
@@ -51,6 +54,7 @@ export class Articles {
       title: 'Curious About AI? Here\'s a Simple Guide to Your Questions',
       subtitle: 'We all have questions about AI — what it is, how it works, and how we can use it. Let\'s answer them step by step, in simple terms.',
       author: 'Mikko Bautista',
+      authorRole: 'Software Engineer II',
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
       date: 'March 18, 2025',
@@ -62,6 +66,7 @@ export class Articles {
       title: 'Learning AI Step by Step: No Shortcuts, Just Experience',
       subtitle: 'The most effective way to truly understand AI is slowly, deliberately, and practically — one prompt at a time.',
       author: 'Mikko Bautista',
+      authorRole: 'Software Engineer II',
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
       date: 'March 18, 2025',
@@ -73,6 +78,7 @@ export class Articles {
       title: 'Understanding Artificial Intelligence: A Simple Guide for Everyone',
       subtitle: 'A beginner-friendly guide to AI — what it is, how it works, and how it can support your daily work and professional growth.',
       author: 'Mikko Bautista',
+      authorRole: 'Software Engineer II',
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       authorDescription: 'Mikko Bautista is part of the NPI AI Academy team, dedicated to helping professionals integrate AI into everyday work. Passionate about empowering people with technology, Mikko focuses on practical applications of AI that enhance productivity, creativity, and collaboration.',
       date: 'March 17, 2025',
@@ -84,6 +90,7 @@ export class Articles {
       title: 'How AI Can Help You Work Smarter, Not Harder',
       subtitle: 'Practical ways AI can simplify tasks, improve efficiency, and help professionals focus on meaningful work.',
       author: 'Mikko Bautista',
+      authorRole: 'Software Engineer II',
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       date: 'March 17, 2025',
       gradient: 'from-violet-500 to-violet-700',
@@ -94,6 +101,7 @@ export class Articles {
       title: 'Artificial Intelligence in Everyday Work',
       subtitle: 'How AI is already transforming daily work — from automating routine tasks to enabling smarter decisions and human growth.',
       author: 'Mikko Bautista',
+      authorRole: 'Software Engineer II',
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       date: 'March 17, 2025',
       gradient: 'from-cyan-500 to-blue-600',
@@ -104,6 +112,7 @@ export class Articles {
       title: 'Why Learning AI Matters Today',
       subtitle: 'Understanding AI today is not just about keeping up — it\'s about preparing to thrive in a rapidly evolving world.',
       author: 'Mikko Bautista',
+      authorRole: 'Software Engineer II',
       authorPhoto: 'Contributors Image/MikkoBautista.jpg',
       date: 'March 17, 2025',
       gradient: 'from-amber-500 to-orange-600',
@@ -111,17 +120,17 @@ export class Articles {
     },
   ];
 
-  get groupedArticles(): { author: string; authorPhoto?: string; authorDescription?: string; articles: Article[] }[] {
-    const groups = new Map<string, { photo?: string; description?: string; articles: Article[] }>();
+  get groupedArticles(): { author: string; authorRole?: string; authorPhoto?: string; authorDescription?: string; articles: Article[] }[] {
+    const groups = new Map<string, { role?: string; photo?: string; description?: string; articles: Article[] }>();
     for (const article of this.articles) {
-      const entry = groups.get(article.author) ?? { photo: article.authorPhoto, description: article.authorDescription, articles: [] };
+      const entry = groups.get(article.author) ?? { role: article.authorRole, photo: article.authorPhoto, description: article.authorDescription, articles: [] };
       entry.articles.push(article);
       groups.set(article.author, entry);
     }
-    return Array.from(groups.entries()).map(([author, { photo, description, articles }]) => ({ author, authorPhoto: photo, authorDescription: description, articles }));
+    return Array.from(groups.entries()).map(([author, { role, photo, description, articles }]) => ({ author, authorRole: role, authorPhoto: photo, authorDescription: description, articles }));
   }
 
-  get selectedAuthorGroup(): { author: string; authorPhoto?: string; articles: Article[] } | null {
+  get selectedAuthorGroup(): { author: string; authorRole?: string; authorPhoto?: string; articles: Article[] } | null {
     if (!this.selectedAuthor) return null;
     return this.groupedArticles.find(g => g.author === this.selectedAuthor) ?? null;
   }

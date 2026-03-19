@@ -62,7 +62,10 @@
                   </div>
                 }
               </div>
-              <h2 class="text-xl font-extrabold text-dark tracking-tight group-hover:text-primary transition-colors duration-300 mb-1">{{ group.author }}</h2>
+              <h2 class="text-xl font-extrabold text-dark tracking-tight group-hover:text-primary transition-colors duration-300 mb-0.5">{{ group.author }}</h2>
+              @if (group.authorRole) {
+                <p class="text-primary/70 text-xs font-semibold tracking-wide mb-2">{{ group.authorRole }}</p>
+              }
               <p class="text-slate-400 text-sm mb-3">{{ group.articles.length }} {{ group.articles.length === 1 ? 'article' : 'articles' }} published</p>
               @if (group.authorDescription) {
                 <p class="text-slate-500 text-sm leading-relaxed mb-5">{{ group.authorDescription }}</p>
@@ -105,6 +108,9 @@
         </div>
         <div>
           <h2 class="text-2xl font-extrabold text-dark tracking-tight">{{ selectedAuthorGroup.author }}</h2>
+          @if (selectedAuthorGroup.authorRole) {
+            <p class="text-primary/70 text-xs font-semibold tracking-wide">{{ selectedAuthorGroup.authorRole }}</p>
+          }
           <p class="text-slate-400 text-sm">{{ selectedAuthorGroup.articles.length }} {{ selectedAuthorGroup.articles.length === 1 ? 'article' : 'articles' }} published</p>
         </div>
       </div>
@@ -153,7 +159,7 @@
           <span class="text-slate-300">&middot;</span>
           <span class="flex items-center gap-2">
             <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista<span class="text-primary/60 font-medium"> · Software Engineer II</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Building Better AI Workflows: Start with What Already Exists</h1>
@@ -359,7 +365,7 @@
           <span class="text-slate-300">&middot;</span>
           <span class="flex items-center gap-2">
             <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista<span class="text-primary/60 font-medium"> · Software Engineer II</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Curious About AI? Here's a Simple Guide to Your Questions</h1>
@@ -475,7 +481,7 @@
           <span class="text-slate-300">&middot;</span>
           <span class="flex items-center gap-2">
             <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista<span class="text-primary/60 font-medium"> · Software Engineer II</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Learning AI Step by Step: No Shortcuts, Just Experience</h1>
@@ -586,7 +592,7 @@
           <span class="text-slate-300">·</span>
           <span class="flex items-center gap-2">
             <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista<span class="text-primary/60 font-medium"> · Software Engineer II</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Understanding Artificial Intelligence: A Simple Guide for Everyone</h1>
@@ -800,7 +806,7 @@
           <span class="text-slate-300">&middot;</span>
           <span class="flex items-center gap-2">
             <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista<span class="text-primary/60 font-medium"> · Software Engineer II</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">How AI Can Help You Work Smarter, Not Harder</h1>
@@ -998,7 +1004,7 @@
           <span class="text-slate-300">&middot;</span>
           <span class="flex items-center gap-2">
             <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista<span class="text-primary/60 font-medium"> · Software Engineer II</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Artificial Intelligence in Everyday Work</h1>
@@ -1128,7 +1134,7 @@
           <span class="text-slate-300">&middot;</span>
           <span class="flex items-center gap-2">
             <img src="npiaiLogo.png" alt="NPI AI Academy" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">NPI AI Academy</span>
+            <span class="text-slate-600 text-sm font-semibold">NPI AI Academy<span class="text-primary/60 font-medium"> · AI Learning Platform</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Tips to Combine AI with Human Creativity, Judgment, and Collaboration</h1>
@@ -1314,7 +1320,7 @@
           <span class="text-slate-300">&middot;</span>
           <span class="flex items-center gap-2">
             <img src="Contributors Image/MikkoBautista.jpg" alt="Mikko Bautista" class="w-7 h-7 rounded-lg object-cover ring-2 ring-white shadow-sm">
-            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista</span>
+            <span class="text-slate-600 text-sm font-semibold">Mikko Bautista<span class="text-primary/60 font-medium"> · Software Engineer II</span></span>
           </span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5 leading-tight tracking-tight">Why Learning AI Matters Today</h1>
