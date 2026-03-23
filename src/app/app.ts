@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, effect } from '@angular/core';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
@@ -6,6 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RoleService } from './services/role.service';
 import { AuthService } from './auth/auth.service';
+import { IdleService } from './services/idle.service';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +20,17 @@ export class App {
   private router = inject(Router);
   private roleService = inject(RoleService);
   private authService = inject(AuthService);
+  private idleService = inject(IdleService);
 
   theme = this.roleService.theme;
+
+  private idleEffect = effect(() => {
+    if (this.authService.isAuthenticated()) {
+      this.idleService.start();
+    } else {
+      this.idleService.stop();
+    }
+  });
 
   private alwaysHiddenRoutes = ['/login', '/select-role'];
   private authConditionalRoutes = ['/privacy-policy', '/terms-of-service'];

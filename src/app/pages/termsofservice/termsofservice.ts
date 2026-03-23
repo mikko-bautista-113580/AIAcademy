@@ -11,5 +11,5 @@ import { AuthService } from '../../auth/auth.service';
 export class TermsOfService {
   private authService = inject(AuthService);
   isAuthenticated = this.authService.isAuthenticated;
-  lastUpdated = 'March 18, 2026';
+  lastUpdated = 'March 20, 2026';
 }
